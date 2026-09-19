@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayLog - Atividades</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-shell">
+
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Play<span class="brand-accent">Log</span></span>
+    </a>
+
+    <label class="search-box">
+      <svg viewBox="0 0 20 20" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="14" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+      <input type="search" placeholder="Pesquisar jogos, listas, usuarios...">
+    </label>
+
+    <nav class="top-nav" aria-label="Navegacao principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="jogos.html">Jogos</a></li>
+        <li><a href="listas.html">Listas</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+
+    <div class="topbar-icons">
+      <button type="button" class="icon-button" aria-label="Notificacoes">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar">
+    </div>
+  </header>
+
+  <div class="app-body">
+
+    <aside class="sidebar-left" aria-label="Menu lateral">
+      <nav>
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 11 L12 4 L20 11 V20 H4 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Inicio
+          </a></li>
+          <li><a href="#" class="soon" title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2"/></svg>
+            Explorar
+          </a></li>
+          <li><a href="jogos.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="9" width="18" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="13" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/></svg>
+            Jogos
+          </a></li>
+          <li><a href="listas.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="4" y="5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="10.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="16" width="16" height="3" rx="1" fill="currentColor"/></svg>
+            Listas
+          </a></li>
+          <li><a href="atividade.html" class="active" aria-current="page">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M13 3 L5 13 h6 l-1 8 8 -11 h-6 Z" fill="currentColor"/></svg>
+            Atividade
+          </a></li>
+          <li><a href="#" class="soon" title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Mensagens
+          </a></li>
+          <li><a href="#" class="soon" title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Notificacoes
+          </a></li>
+          <li><a href="#" class="soon" title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Perfil
+          </a></li>
+          <li><a href="cadastro.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="9" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Cadastro
+          </a></li>
+          <li><a href="#" class="soon" title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5.6 5.6 l2.1 2.1 M16.3 16.3 l2.1 2.1 M5.6 18.4 l2.1 -2.1 M16.3 7.7 l2.1 -2.1" stroke="currentColor" stroke-width="2"/></svg>
+            Configuracoes
+          </a></li>
+        </ul>
+      </nav>
+
+      <div class="side-promo">
+        <img src="assets/controller.png" alt="" class="side-promo-image">
+        <h2>Descubra. Jogue. Compartilhe.</h2>
+        <p>Mais que um catalogo, uma comunidade de jogadores.</p>
+        <a href="cadastro.html" class="cta-button">Saiba mais</a>
+      </div>
+    </aside>
+
+    <main class="feed">
+
+      <section class="page-header">
+        <div>
+          <h1>Atividades</h1>
+          <p>Acompanhe sua jornada no mundo dos jogos.</p>
+        </div>
+        <button type="button" class="dropdown-button">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/><line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2"/><line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2"/></svg>
+          Ultimos 30 dias
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 9 l6 6 6 -6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+      </section>
+
+      <section class="stat-cards" aria-label="Resumo de atividade">
+        <div class="stat-card">
+          <span class="stat-icon">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="9" width="18" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="13" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/></svg>
+          </span>
+          <span>
+            <strong class="stat-value">18</strong>
+            <span class="stat-label">Jogos jogados</span>
+          </span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7 v5 l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span>
+            <strong class="stat-value">42h</strong>
+            <span class="stat-label">Tempo de jogo</span>
+          </span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M7 4 h10 v5 a5 5 0 0 1 -10 0 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 6 H4 a1 1 0 0 0 -1 1 v1 a4 4 0 0 0 4 4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 6 h3 a1 1 0 0 1 1 1 v1 a4 4 0 0 1 -4 4" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="14" x2="12" y2="18" stroke="currentColor" stroke-width="2"/><line x1="9" y1="20" x2="15" y2="20" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          <span>
+            <strong class="stat-value">12</strong>
+            <span class="stat-label">Conquistas</span>
+          </span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 19 a6 6 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 19 a5 5 0 0 1 7 -4.3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          <span>
+            <strong class="stat-value">5</strong>
+            <span class="stat-label">Amigos online</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="panel chart-panel" aria-labelledby="chart-title">
+        <div class="chart-header">
+          <div>
+            <h2 id="chart-title">Tempo de jogo</h2>
+            <p>Veja quanto tempo voce jogou nos ultimos dias.</p>
+          </div>
+          <div class="chart-toggle">
+            <button type="button" class="chart-toggle-btn active">Horas</button>
+            <button type="button" class="chart-toggle-btn">Jogos</button>
+          </div>
+        </div>
+
+        <div class="bar-chart">
+          <div class="bar-chart-axis">
+            <span>8h</span><span>6h</span><span>4h</span><span>2h</span><span>0h</span>
+          </div>
+          <div class="bar-chart-plot">
+            <div class="bar-chart-col"><span class="bar" style="height: 9%"></span><span class="bar-chart-day">1 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 50%"></span><span class="bar-chart-day">2 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 34%"></span><span class="bar-chart-day">3 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 69%"></span><span class="bar-chart-day">4 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 88%"></span><span class="bar-chart-day">5 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 50%"></span><span class="bar-chart-day">6 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 28%"></span><span class="bar-chart-day">7 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 40%"></span><span class="bar-chart-day">8 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 56%"></span><span class="bar-chart-day">9 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 34%"></span><span class="bar-chart-day">10 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 25%"></span><span class="bar-chart-day">11 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 44%"></span><span class="bar-chart-day">12 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 84%"></span><span class="bar-chart-day">13 Set</span></div>
+            <div class="bar-chart-col"><span class="bar" style="height: 53%"></span><span class="bar-chart-day">14 Set</span></div>
+          </div>
+        </div>
+        <p class="chart-caption">Dados ilustrativos.</p>
+      </section>
+
+      <section class="panel recent-panel" aria-labelledby="recent-title">
+        <div class="section-header-row">
+          <div>
+            <h2 id="recent-title">Atividades recentes</h2>
+            <p>Veja o que voce fez recentemente na plataforma.</p>
+          </div>
+          <a href="#" class="panel-edit-link">Ver todas &#8594;</a>
+        </div>
+
+        <ul class="recent-list">
+          <li class="recent-item">
+            <img src="assets/dandara_cover.jpeg" alt="Capa do jogo Dandara" class="recent-thumb">
+            <div class="recent-main">
+              <p class="recent-title">
+                <svg viewBox="0 0 16 16" class="dot-icon" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--color-purple)"/></svg>
+                Dandara
+              </p>
+              <p class="recent-desc">Jogou por 3h 24min</p>
+            </div>
+            <span class="recent-time">Ha 2 horas</span>
+          </li>
+          <li class="recent-item">
+            <img src="assets/fobia_cover.jpg" alt="Capa do jogo Fobia" class="recent-thumb">
+            <div class="recent-main">
+              <p class="recent-title">
+                <svg viewBox="0 0 16 16" class="dot-icon" aria-hidden="true"><path d="M4 2 h8 v4 a4 4 0 0 1 -8 0 Z" fill="none" stroke="var(--color-purple)" stroke-width="1.3"/><line x1="8" y1="10" x2="8" y2="13" stroke="var(--color-purple)" stroke-width="1.3"/><line x1="6" y1="14" x2="10" y2="14" stroke="var(--color-purple)" stroke-width="1.3"/></svg>
+                Fobia
+              </p>
+              <p class="recent-desc">Conquistou: Sobrevivente</p>
+            </div>
+            <span class="recent-time">Ha 5 horas</span>
+          </li>
+          <li class="recent-item">
+            <img src="assets/171_cover.jpg" alt="Capa do jogo 171" class="recent-thumb">
+            <div class="recent-main">
+              <p class="recent-title">
+                <svg viewBox="0 0 16 16" class="dot-icon" aria-hidden="true"><rect x="2" y="3" width="12" height="2" fill="var(--color-purple)"/><rect x="2" y="7" width="12" height="2" fill="var(--color-purple)"/><rect x="2" y="11" width="12" height="2" fill="var(--color-purple)"/></svg>
+                171
+              </p>
+              <p class="recent-desc">Adicionou a lista: Favoritos</p>
+            </div>
+            <span class="recent-time">Ha 1 dia</span>
+          </li>
+          <li class="recent-item">
+            <img src="assets/enigma_do_medo_cover.jpg" alt="Capa do jogo Enigma do Medo" class="recent-thumb">
+            <div class="recent-main">
+              <p class="recent-title">
+                <svg viewBox="0 0 16 16" class="dot-icon" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--color-purple)"/></svg>
+                Enigma do Medo
+              </p>
+              <p class="recent-desc">Jogou por 2h 10min</p>
+            </div>
+            <span class="recent-time">Ha 1 dia</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="friends-activity" aria-labelledby="friends-activity-title">
+        <div class="section-header-row">
+          <h2 id="friends-activity-title">Atividade dos amigos</h2>
+          <a href="#" class="panel-edit-link">Ver mais &#8594;</a>
+        </div>
+        <div class="friends-activity-row">
+          <div class="friends-activity-card">
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Ana <span class="status-dot" aria-hidden="true"></span></span>
+              <span class="friend-status">Jogando Dandara</span>
+            </div>
+          </div>
+          <div class="friends-activity-card">
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Bruno <span class="status-dot" aria-hidden="true"></span></span>
+              <span class="friend-status">Jogando Fobia</span>
+            </div>
+          </div>
+          <div class="friends-activity-card">
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Carla <span class="status-dot" aria-hidden="true"></span></span>
+              <span class="friend-status">Jogando Enigma do Medo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar-right" aria-label="Perfil e comunidade">
+
+      <div class="panel profile-card">
+        <h2>Meu Perfil</h2>
+        <div class="profile-head">
+          <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="profile-avatar">
+          <span class="profile-name">Jogador123</span>
+        </div>
+        <div class="profile-stats">
+          <div><strong>18</strong><span>Jogados</span></div>
+          <div><strong>7</strong><span>Quero jogar</span></div>
+          <div><strong>12</strong><span>Reviews</span></div>
+          <div><strong>5</strong><span>Listas</span></div>
+        </div>
+        <p class="profile-quote">&ldquo;Sempre em busca do proximo jogo inesquecivel.&rdquo;</p>
+        <a href="cadastro.html" class="cta-button">Editar perfil</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title-row">
+          <h2>Generos favoritos</h2>
+          <a href="cadastro.html" class="panel-edit-link">Editar</a>
+        </div>
+        <ul class="tag-list">
+          <li>RPG</li>
+          <li>Aventura</li>
+          <li>Terror</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Amigos online</h2>
+        <ul class="friend-list">
+          <li>
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Ana</span>
+              <span class="friend-status">Jogando Dandara</span>
+            </div>
+          </li>
+          <li>
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Bruno</span>
+              <span class="friend-status">Jogando Fobia</span>
+            </div>
+          </li>
+          <li>
+            <img src="assets/avatar_placeholder.png" alt="" class="friend-avatar">
+            <div>
+              <span class="friend-name">Carla</span>
+              <span class="friend-status">Online</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Em alta na comunidade</h2>
+        <ul class="hashtag-list">
+          <li>#NovosLancamentos</li>
+          <li>#IndieGames</li>
+          <li>#Multiplayer</li>
+          <li>#Retrogaming</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>PlayLog &mdash; site feito para fins educacionais.</p>
+  </footer>
+
+</body>
+</html>
