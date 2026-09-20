@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayLog - Inicio</title>
+  <title>PlayLog - Perfil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="app-shell">
@@ -20,7 +20,7 @@
 
     <nav class="top-nav" aria-label="Navegacao principal">
       <ul>
-        <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="jogos.html">Jogos</a></li>
         <li><a href="listas.html">Listas</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
@@ -41,7 +41,7 @@
     <aside class="sidebar-left" aria-label="Menu lateral">
       <nav>
         <ul>
-          <li><a href="index.html" class="active" aria-current="page">
+          <li><a href="index.html">
             <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 11 L12 4 L20 11 V20 H4 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             Inicio
           </a></li>
@@ -69,7 +69,7 @@
             <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             Notificacoes
           </a></li>
-          <li><a href="perfil.html">
+          <li><a href="perfil.html" class="active" aria-current="page">
             <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             Perfil
           </a></li>
@@ -94,95 +94,97 @@
 
     <main class="feed">
 
-      <section class="welcome-banner">
-        <div class="welcome-text">
-          <p class="welcome-eyebrow">Boa noite,</p>
-          <h1>Jogador123 <span aria-hidden="true">&#128075;</span></h1>
-          <p>O que voce esta jogando essa semana?</p>
-          <a href="cadastro.html" class="cta-button cta-solid">+ Registrar jogo</a>
+      <section class="panel profile-header">
+        <div class="profile-photo-wrap">
+          <img src="assets/avatar_placeholder.png" alt="Foto de perfil de Jogador123" class="profile-photo">
+          <span class="profile-photo-edit" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 20 l1 -4 11 -11 3 3 -11 11 -4 1 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+        </div>
+
+        <div class="profile-header-info">
+          <div class="profile-header-top">
+            <div>
+              <h1>Jogador123</h1>
+              <p class="profile-handle">@jogador123</p>
+              <p class="profile-quote-inline">&ldquo;Sempre em busca do proximo jogo inesquecivel.&rdquo;</p>
+            </div>
+            <a href="cadastro.html" class="cta-button">Editar Perfil</a>
+          </div>
+
+          <div class="profile-stat-bar">
+            <div class="profile-stat-item"><strong>18</strong><span>Jogos jogados</span></div>
+            <div class="profile-stat-item"><strong>7</strong><span>Quero jogar</span></div>
+            <span class="stat-divider" aria-hidden="true"></span>
+            <div class="profile-stat-item"><strong>12</strong><span>Reviews</span></div>
+            <div class="profile-stat-item"><strong>5</strong><span>Listas</span></div>
+          </div>
         </div>
       </section>
 
-      <section class="trending" aria-labelledby="trending-title">
-        <h2 id="trending-title">Em alta essa semana</h2>
-        <div class="game-grid">
-          <article class="game-card">
-            <img src="assets/171_cover.jpg" alt="Capa do jogo 171">
-            <h3>171</h3>
-            <p class="rating">&#9733; 4.6</p>
-          </article>
-          <article class="game-card">
-            <img src="assets/enigma_do_medo_cover.jpg" alt="Capa do jogo Enigma do Medo">
-            <h3>Enigma do Medo</h3>
-            <p class="rating">&#9733; 4.3</p>
-          </article>
-          <article class="game-card">
-            <img src="assets/dandara_cover.jpeg" alt="Capa do jogo Dandara">
-            <h3>Dandara</h3>
-            <p class="rating">&#9733; 4.5</p>
-          </article>
-          <article class="game-card">
-            <img src="assets/fobia_cover.jpg" alt="Capa do jogo Fobia">
+      <nav class="profile-tabs" aria-label="Secoes do perfil">
+        <a href="#" class="profile-tab active" aria-current="page">Visao geral</a>
+        <a href="#" class="profile-tab">Jogos</a>
+        <a href="#" class="profile-tab">Reviews</a>
+        <a href="#" class="profile-tab">Listas</a>
+        <a href="#" class="profile-tab">Conquistas</a>
+        <a href="#" class="profile-tab">Atividade</a>
+      </nav>
+
+      <section aria-labelledby="favorite-title">
+        <div class="section-header-row">
+          <h2 id="favorite-title">Jogo favorito</h2>
+        </div>
+        <div class="favorite-game-card">
+          <img src="assets/fobia_cover.jpg" alt="Capa do jogo Fobia" class="favorite-game-cover">
+          <div class="favorite-game-info">
             <h3>Fobia</h3>
             <p class="rating">&#9733; 4.4</p>
-          </article>
+            <p class="favorite-game-quote">&ldquo;Historia sinistra, nao consegui parar de jogar!&rdquo;</p>
+          </div>
+          <span class="favorite-badge">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 20 C6 15 3 11.5 3 8 a4.5 4.5 0 0 1 9 -1.5 A4.5 4.5 0 0 1 21 8 c0 3.5 -3 7 -9 12 Z" fill="var(--color-purple)"/></svg>
+            Favorito
+          </span>
         </div>
       </section>
 
-      <section class="activity" aria-labelledby="activity-title">
-        <h2 id="activity-title">Atividade dos amigos</h2>
-        <ul class="activity-list">
-          <li class="activity-card">
-            <div class="activity-body">
-              <p class="activity-meta"><img src="assets/avatar_placeholder.png" alt="" class="activity-avatar"><strong>Ana</strong> avaliou <span class="activity-time">2h atras</span></p>
-              <p class="activity-game">Dandara</p>
-              <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="activity-comment">Level design incrivel, nunca vi nada parecido.</p>
-              <p class="activity-stats">&#10084; 24 &nbsp; &#128172; 6</p>
-            </div>
-            <img src="assets/dandara_cover.jpeg" alt="Capa do jogo Dandara" class="activity-cover">
-          </li>
-          <li class="activity-card">
-            <div class="activity-body">
-              <p class="activity-meta"><img src="assets/avatar_placeholder.png" alt="" class="activity-avatar"><strong>Bruno</strong> avaliou <span class="activity-time">4h atras</span></p>
-              <p class="activity-game">Fobia</p>
-              <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="activity-comment">Tensao do comeco ao fim, joguei com fone e quase morri do coracao.</p>
-              <p class="activity-stats">&#10084; 50 &nbsp; &#128172; 14</p>
-            </div>
-            <img src="assets/fobia_cover.jpg" alt="Capa do jogo Fobia" class="activity-cover">
-          </li>
-          <li class="activity-card">
-            <div class="activity-body">
-              <p class="activity-meta"><img src="assets/avatar_placeholder.png" alt="" class="activity-avatar"><strong>Carla</strong> avaliou <span class="activity-time">8h atras</span></p>
-              <p class="activity-game">171</p>
-              <p class="rating">&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="activity-comment">Historia pesada, mas muito bem contada.</p>
-              <p class="activity-stats">&#10084; 78 &nbsp; &#128172; 20</p>
-            </div>
-            <img src="assets/171_cover.jpg" alt="Capa do jogo 171" class="activity-cover">
-          </li>
-        </ul>
+      <section aria-labelledby="recent-games-title">
+        <div class="section-header-row">
+          <h2 id="recent-games-title">Jogos recentes</h2>
+          <a href="jogos.html" class="panel-edit-link">Ver todos &#8594;</a>
+        </div>
+        <div class="recent-games-row">
+          <div class="recent-game-item">
+            <img src="assets/171_cover.jpg" alt="Capa do jogo 171">
+            <h4>171</h4>
+            <p>Hoje</p>
+          </div>
+          <div class="recent-game-item">
+            <img src="assets/fobia_cover.jpg" alt="Capa do jogo Fobia">
+            <h4>Fobia</h4>
+            <p>2 dias atras</p>
+          </div>
+          <div class="recent-game-item">
+            <img src="assets/enigma_do_medo_cover.jpg" alt="Capa do jogo Enigma do Medo">
+            <h4>Enigma do Medo</h4>
+            <p>5 dias atras</p>
+          </div>
+          <div class="recent-game-item">
+            <img src="assets/dandara_cover.jpeg" alt="Capa do jogo Dandara">
+            <h4>Dandara</h4>
+            <p>1 semana atras</p>
+          </div>
+        </div>
       </section>
 
     </main>
 
-    <aside class="sidebar-right" aria-label="Perfil e comunidade">
+    <aside class="sidebar-right" aria-label="Sobre e comunidade">
 
-      <div class="panel profile-card">
-        <h2>Meu Perfil</h2>
-        <div class="profile-head">
-          <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="profile-avatar">
-          <span class="profile-name">Jogador123</span>
-        </div>
-        <div class="profile-stats">
-          <div><strong>18</strong><span>Jogados</span></div>
-          <div><strong>7</strong><span>Quero jogar</span></div>
-          <div><strong>12</strong><span>Reviews</span></div>
-          <div><strong>5</strong><span>Listas</span></div>
-        </div>
-        <p class="profile-quote">&ldquo;Sempre em busca do proximo jogo inesquecivel.&rdquo;</p>
-        <a href="cadastro.html" class="cta-button">Editar perfil</a>
+      <div class="panel">
+        <h2>Sobre mim</h2>
+        <p class="about-me-text">&ldquo;Amo jogos, historias boas e pessoas legais! Me recomendem jogos!&rdquo;</p>
       </div>
 
       <div class="panel">
@@ -195,6 +197,30 @@
           <li>Aventura</li>
           <li>Terror</li>
         </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Minhas listas</h2>
+        <div class="my-lists-row">
+          <div class="my-list-item">
+            <span class="my-list-icon">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 20 C6 15 3 11.5 3 8 a4.5 4.5 0 0 1 9 -1.5 A4.5 4.5 0 0 1 21 8 c0 3.5 -3 7 -9 12 Z" fill="var(--color-purple)"/></svg>
+            </span>
+            Favoritos
+          </div>
+          <div class="my-list-item">
+            <span class="my-list-icon">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 3 h12 v18 l-6 -4 -6 4 Z" fill="var(--color-purple)"/></svg>
+            </span>
+            Quero jogar
+          </div>
+          <div class="my-list-item">
+            <span class="my-list-icon">
+              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" fill="var(--color-purple)"/><path d="M8 12 l3 3 5 -6" fill="none" stroke="var(--color-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Zerados
+          </div>
+        </div>
       </div>
 
       <div class="panel">
@@ -221,16 +247,6 @@
               <span class="friend-status">Online</span>
             </div>
           </li>
-        </ul>
-      </div>
-
-      <div class="panel">
-        <h2>Em alta na comunidade</h2>
-        <ul class="hashtag-list">
-          <li>#NovosLancamentos</li>
-          <li>#IndieGames</li>
-          <li>#Multiplayer</li>
-          <li>#Retrogaming</li>
         </ul>
       </div>
 
