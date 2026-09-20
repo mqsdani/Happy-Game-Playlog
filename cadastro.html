@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayLog - Criar conta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-shell">
+
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Play<span class="brand-accent">Log</span></span>
+    </a>
+
+    <label class="search-box">
+      <svg viewBox="0 0 20 20" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="14" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+      <input type="search" placeholder="Pesquisar jogos, listas, usuarios...">
+    </label>
+
+    <nav class="top-nav" aria-label="Navegacao principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="jogos.html">Jogos</a></li>
+        <li><a href="listas.html">Listas</a></li>
+        <li><a href="cadastro.html" class="active" aria-current="page">Cadastro</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+
+    <div class="topbar-icons">
+      <button type="button" class="icon-button" aria-label="Notificacoes">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar">
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-backdrop" aria-hidden="true">
+      <div class="cover-collage">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <h1>Crie sua <span class="brand-accent">Conta</span></h1>
+      <p class="auth-subtitle">Faca parte da comunidade PlayLog e comece a registrar seus jogos</p>
+
+      <form class="auth-form" action="index.html" method="get">
+        <div class="form-field">
+          <label for="usuario">Nome de usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            required
+            minlength="3"
+            maxlength="30"
+            pattern="[A-Za-z0-9_\.]+"
+            title="Use apenas letras, numeros, ponto ou underline (3 a 30 caracteres)."
+            autocomplete="username">
+        </div>
+
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email">
+        </div>
+
+        <div class="form-field">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            required
+            minlength="8"
+            pattern="(?=.*[A-Za-z])(?=.*\d).{8,}"
+            title="Minimo de 8 caracteres, com pelo menos uma letra e um numero."
+            autocomplete="new-password">
+        </div>
+
+        <div class="form-field">
+          <label for="confirmar-senha">Confirmar senha</label>
+          <input
+            type="password"
+            id="confirmar-senha"
+            name="confirmar_senha"
+            required
+            minlength="8"
+            autocomplete="new-password">
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" name="termos" value="aceito" required checked>
+          Concordo com os <a href="#">termos de uso</a> e <a href="#">politica de privacidade</a>
+        </label>
+
+        <button type="submit" class="auth-submit">Criar conta</button>
+      </form>
+
+      <div class="auth-divider"><span>ou cadastre-se com</span></div>
+
+      <div class="auth-social-row">
+        <button type="button" class="social-button" aria-label="Cadastrar com Google">
+          <img src="assets/google_logo.png" alt="">
+        </button>
+        <button type="button" class="social-button" aria-label="Cadastrar com PlayStation">
+          <img src="assets/playstation_logo.png" alt="">
+        </button>
+        <button type="button" class="social-button" aria-label="Cadastrar com Xbox">
+          <img src="assets/xbox_logo.png" alt="">
+        </button>
+      </div>
+
+      <p class="auth-footer-link">Ja tem uma conta? <a href="#">Entrar</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>PlayLog &mdash; site feito para fins educacionais.</p>
+
+    <p class="creditos">
+      Arthur Danta Gonzales Felix &ndash; RM 576865<br>
+      Daniela Peres Marques Silveira &ndash; RM 575882<br>
+      Fabien Jean Benjamin Grolleau Lucena &ndash; RM 576715<br>
+      Pedro de Azevedo Melo Goncalves &ndash; RM 576401<br>
+      Vitor de Oliveira Rosas &ndash; RM 576045
+    </p>
+  </footer>
+
+</body>
+</html>
