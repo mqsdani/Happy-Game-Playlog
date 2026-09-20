@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucesso - Playlog</title>
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sucesso - Playlog</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="success-page">
+<body class="app-shell">
+
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Play<span class="brand-accent">Log</span></span>
+    </a>
+    <label class="search-box">
+      <svg viewBox="0 0 20 20" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="14" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+      <input type="search" placeholder="Pesquisar jogos, listas, usuarios...">
+    </label>
+    <nav class="top-nav" aria-label="Navegacao principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="jogos.html">Jogos</a></li>
+        <li><a href="listas.html">Listas</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+    <div class="topbar-icons">
+      <button type="button" class="icon-button" aria-label="Notificacoes">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar">
+    </div>
+  </header>
+
+  <main class="success-page">
     <h1>Sucesso!</h1>
-    <p>Operação realizada com sucesso.</p>
+    <p>Operacao realizada com sucesso.</p>
     <a href="perfil.html">Ir para o meu perfil</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>PlayLog &mdash; site feito para fins educacionais em 2026.</p>
+    <p class="creditos">
+      Arthur Danta Gonzales Felix &ndash; RM 576865<br>
+      Daniela Peres Marques Silveira &ndash; RM 575882<br>
+      Fabien Jean Benjamin Grolleau Lucena &ndash; RM 576715<br>
+      Pedro de Azevedo Melo Goncalves &ndash; RM 576401<br>
+      Vitor de Oliveira Rosas &ndash; RM 576045
+    </p>
+  </footer>
+
 </body>
 </html>

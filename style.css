@@ -598,7 +598,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
   text-align: center;
   gap: 12px;
 }
@@ -940,4 +940,23 @@ button {
   font-size: 12px;
   opacity: 0.6;
   margin-bottom: 2px;
+}
+.game-table-section {
+  margin-top: 32px;
+}
+.game-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+.game-table th,
+.game-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--fundo-painel);
+  font-size: 14px;
+}
+.game-table th {
+  color: var(--roxo);
+  font-weight: 600;
 }
