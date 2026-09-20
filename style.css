@@ -591,3 +591,32 @@ button {
     width: 100%;
   }
 }
+.success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  gap: 12px;
+}
+
+.success-page h1 {
+  color: var(--verde);
+  font-size: 32px;
+}
+
+.success-page p {
+  color: var(--texto);
+  font-size: 16px;
+}
+
+.success-page a {
+  margin-top: 12px;
+  display: inline-block;
+  background-color: var(--roxo);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
