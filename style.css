@@ -9,6 +9,10 @@
   --fundo: #131314;
   --fundo-painel: #1F2225;
   --texto: #BABBBB;
+  /* aliases para os nomes usados nos SVGs inline do HTML */ 
+  --color-purple: var(--roxo);
+  --color-panel: var(--fundo-painel);
+  --color-ink: var(--fundo);
 }
 body {
   background-color: var(--fundo);
@@ -160,12 +164,7 @@ a {
   color: var(--fundo);
   border: none;
 }
-.welcome-banner {
-  background-color: var(--fundo-painel);
-  padding: 24px;
-  border-radius: 8px;
-  margin-bottom: 24px;
-}
+
 .welcome-banner {
   background: linear-gradient(135deg, var(--roxo), var(--fundo));
   padding: 24px;
