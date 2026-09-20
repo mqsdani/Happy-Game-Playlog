@@ -44,17 +44,33 @@
         <img src="assets/dandara_cover.jpeg" alt="">
         <img src="assets/enigma_do_medo_cover.jpg" alt="">
         <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
         <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
         <img src="assets/dandara_cover.jpeg" alt="">
         <img src="assets/enigma_do_medo_cover.jpg" alt="">
         <img src="assets/171_cover.jpg" alt="">
         <img src="assets/fobia_cover.jpg" alt="">
         <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
         <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/dandara_cover.jpeg" alt="">
       </div>
     </div>
 
@@ -62,7 +78,7 @@
       <h1>Crie sua <span class="brand-accent">Conta</span></h1>
       <p class="auth-subtitle">Faca parte da comunidade PlayLog e comece a registrar seus jogos</p>
 
-      <form class="auth-form" action="index.html" method="get">
+      <form class="auth-form" action="sucesso.html" method="get">
         <div class="form-field">
           <label for="usuario">Nome de usuario</label>
           <input
@@ -95,8 +111,8 @@
             name="senha"
             required
             minlength="8"
-            pattern="(?=.*[A-Za-z])(?=.*\d).{8,}"
-            title="Minimo de 8 caracteres, com pelo menos uma letra e um numero."
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+            title="Minimo de 8 caracteres, com letra maiuscula, minuscula, numero e caractere especial."
             autocomplete="new-password">
         </div>
 
@@ -108,12 +124,14 @@
             name="confirmar_senha"
             required
             minlength="8"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+            title="Minimo de 8 caracteres, com letra maiuscula, minuscula, numero e caractere especial."
             autocomplete="new-password">
         </div>
 
         <label class="checkbox-row">
           <input type="checkbox" name="termos" value="aceito" required checked>
-          Concordo com os <a href="#">termos de uso</a> e <a href="#">politica de privacidade</a>
+          <span>Concordo com os <a href="#">termos de uso</a> e <a href="#">politica de privacidade</a></span>
         </label>
 
         <button type="submit" class="auth-submit">Criar conta</button>
