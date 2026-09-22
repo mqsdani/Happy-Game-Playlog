@@ -959,3 +959,35 @@ button {
   color: var(--roxo);
   font-weight: 600;
 }
+.about-main {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px;
+}
+.about-content {
+  max-width: 700px;
+}
+.about-content h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.about-content section {
+  margin-bottom: 24px;
+}
+.about-content h2 {
+  color: var(--roxo);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.about-content p {
+  line-height: 1.6;
+}
+.about-tagline {
+  text-align: center;
+  color: var(--verde);
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 32px;
+}
