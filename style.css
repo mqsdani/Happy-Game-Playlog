@@ -991,3 +991,116 @@ button {
   font-size: 18px;
   margin-top: 32px;
 }
+.my-lists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.list-card {
+  background-color: var(--fundo-painel);
+  padding: 16px;
+  border-radius: 8px;
+}
+.list-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.list-card-title {
+  flex: 1;
+}
+.list-card-title p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.list-card-menu {
+  font-size: 20px;
+  color: var(--texto);
+}
+.list-card-covers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.list-card-covers img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.new-list-button {
+  background-color: var(--roxo);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.popular-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.popular-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--fundo-painel);
+  padding: 16px;
+  border-radius: 8px;
+}
+.popular-list-covers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  width: 80px;
+  flex-shrink: 0;
+}
+.popular-list-covers img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.popular-list-body {
+  flex: 1;
+}
+.popular-list-body h3 {
+  margin-bottom: 6px;
+}
+.popular-list-author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+.popular-list-author img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.popular-list-quote {
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.7;
+}
+.popular-list-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+@media (max-width: 700px) {
+  .game-table-section {
+    overflow-x: auto;
+  }
+  .game-table {
+    min-width: 600px;
+  }
+}
