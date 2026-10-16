@@ -4,73 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlayLog - Criar conta</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="auth-shell">
 
-  <header class="topbar">
+  <header class="topbar navbar navbar-dark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menu de navegacao">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <a href="index.html" class="brand">
       <span class="brand-name">Play<span class="brand-accent">Log</span></span>
     </a>
 
-    <label class="search-box">
+    <form class="search-box" id="buscaTopo" role="search">
       <svg viewBox="0 0 20 20" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="14" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
-      <input type="search" placeholder="Pesquisar jogos, listas, usuarios...">
-    </label>
-
-    <nav class="top-nav" aria-label="Navegacao principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="jogos.html">Jogos</a></li>
-        <li><a href="listas.html">Listas</a></li>
-        <li><a href="cadastro.html" class="active" aria-current="page">Cadastro</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-      </ul>
-    </nav>
+      <label for="campoBuscaTopo" class="visually-hidden">Pesquisar jogos</label>
+      <input type="search" id="campoBuscaTopo" placeholder="Pesquisar jogos, listas, usuarios...">
+    </form>
 
     <div class="topbar-icons">
-      <button type="button" class="icon-button" aria-label="Notificacoes">
-        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-      </button>
-      <img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar">
+      <div class="dropdown">
+        <button type="button" class="icon-button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notificacoes">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-playlog">
+          <li><h6 class="dropdown-header">Notificacoes</h6></li>
+          <li><span class="dropdown-item-text">Ana avaliou Dandara.</span></li>
+          <li><span class="dropdown-item-text">Bruno avaliou Fobia.</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="atividade.html">Ver atividade</a></li>
+        </ul>
+      </div>
+      <a href="perfil.html" class="topbar-avatar-link" aria-label="Meu perfil"><img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar"></a>
     </div>
   </header>
 
-  <main class="auth-main">
+    <aside class="sidebar-left offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralTitulo">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="menuLateralTitulo">Menu</h2>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav aria-label="Menu lateral">
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 11 L12 4 L20 11 V20 H4 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Inicio
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2"/></svg>
+            Explorar
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="jogos.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="9" width="18" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="13" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/></svg>
+            Jogos
+          </a></li>
+          <li><a href="listas.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="4" y="5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="10.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="16" width="16" height="3" rx="1" fill="currentColor"/></svg>
+            Listas
+          </a></li>
+          <li><a href="atividade.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M13 3 L5 13 h6 l-1 8 8 -11 h-6 Z" fill="currentColor"/></svg>
+            Atividade
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Mensagens
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Notificacoes
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="perfil.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Perfil
+          </a></li>
+          <li><a href="cadastro.html" class="active" aria-current="page">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="9" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Cadastro
+          </a></li>
+          <li><a href="sobre.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11 v5 M12 8 v0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Sobre
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5.6 5.6 l2.1 2.1 M16.3 16.3 l2.1 2.1 M5.6 18.4 l2.1 -2.1 M16.3 7.7 l2.1 -2.1" stroke="currentColor" stroke-width="2"/></svg>
+            Configuracoes
+          <small class="soon-badge">em breve</small></a></li>
+        </ul>
+      </nav>
+      <div class="side-promo">
+        <img src="assets/controller.png" alt="" class="side-promo-image">
+        <h2>Descubra. Jogue. Compartilhe.</h2>
+        <p>Mais que um catalogo, uma comunidade de jogadores.</p>
+        <a href="cadastro.html" class="cta-button">Saiba mais</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="auth-main" id="conteudo">
     <div class="auth-backdrop" aria-hidden="true">
       <div class="cover-collage">
         <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/dodgeball_cover.jpeg" alt="">
+        <img src="assets/monica_cover.jpeg" alt="">
         <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/em_busca_dos_tesouros_cover.jpeg" alt="">
+        <img src="assets/no_place_for_bravery_cover.jpeg" alt="">
         <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
+        <img src="assets/gaucho_cover.jpeg" alt="">
+        <img src="assets/relic_hunters_cover.jpeg" alt="">
+        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/god_of_war_4_cover.jpg" alt="">
+        <img src="assets/the_last_night_mary_cover.jpeg" alt="">
+        <img src="assets/9kings_cover.jpeg" alt="">
+        <img src="assets/god_of_war_ragnarok_cover.jpg" alt="">
+        <img src="assets/the_last_of_us_cover.jpeg" alt="">
+        <img src="assets/arida_cover.jpeg" alt="">
+        <img src="assets/gta_v_cover.jpg" alt="">
+        <img src="assets/the_last_of_us_2_cover.png" alt="">
+        <img src="assets/arida2_cover.jpeg" alt="">
+        <img src="assets/gta_VI_cover.png" alt="">
         <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/dodgeball_cover.jpeg" alt="">
+        <img src="assets/monica_cover.jpeg" alt="">
         <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
+        <img src="assets/em_busca_dos_tesouros_cover.jpeg" alt="">
+        <img src="assets/no_place_for_bravery_cover.jpeg" alt="">
         <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
+        <img src="assets/gaucho_cover.jpeg" alt="">
+        <img src="assets/relic_hunters_cover.jpeg" alt="">
         <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/enigma_do_medo_cover.jpg" alt="">
-        <img src="assets/171_cover.jpg" alt="">
-        <img src="assets/fobia_cover.jpg" alt="">
-        <img src="assets/dandara_cover.jpeg" alt="">
+        <img src="assets/god_of_war_4_cover.jpg" alt="">
+        <img src="assets/the_last_night_mary_cover.jpeg" alt="">
       </div>
     </div>
 
@@ -78,85 +146,117 @@
       <h1>Crie sua <span class="brand-accent">Conta</span></h1>
       <p class="auth-subtitle">Faca parte da comunidade PlayLog e comece a registrar seus jogos</p>
 
-      <form class="auth-form" action="sucesso.html" method="get">
+      <form class="auth-form" id="formCadastro" action="sucesso.html" method="get" novalidate>
         <div class="form-field">
           <label for="usuario">Nome de usuario</label>
           <input
             type="text"
+            class="form-control"
             id="usuario"
             name="usuario"
             required
             minlength="3"
             maxlength="30"
             pattern="[A-Za-z0-9_\.]+"
+            data-rotulo="O nome de usuario"
             title="Use apenas letras, numeros, ponto ou underline (3 a 30 caracteres)."
             autocomplete="username">
+          <div class="invalid-feedback"></div>
         </div>
 
         <div class="form-field">
           <label for="email">E-mail</label>
           <input
             type="email"
+            class="form-control"
             id="email"
             name="email"
             required
+            data-rotulo="O e-mail"
             autocomplete="email">
+          <div class="invalid-feedback"></div>
         </div>
 
         <div class="form-field">
           <label for="senha">Senha</label>
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            required
-            minlength="8"
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
-            title="Minimo de 8 caracteres, com letra maiuscula, minuscula, numero e caractere especial."
-            autocomplete="new-password">
+          <div class="input-group">
+            <input
+              type="password"
+              class="form-control"
+              id="senha"
+              name="senha"
+              required
+              minlength="8"
+              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+              data-rotulo="A senha"
+              title="Minimo de 8 caracteres, com letra maiuscula, minuscula, numero e caractere especial."
+              autocomplete="new-password"
+              aria-describedby="requisitosSenha">
+            <button type="button" class="mostrar-senha" data-mostrar-senha="senha" aria-pressed="false">Mostrar</button>
+          </div>
+          <div class="invalid-feedback"></div>
+          <div class="progress progress-playlog" role="progressbar" aria-label="Forca da senha" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar" id="forcaBarra" style="width: 0%"></div>
+          </div>
+          <ul class="requisitos-senha" id="requisitosSenha">
+            <li data-req="tamanho"><span class="marca" aria-hidden="true">&bull;</span> 8 caracteres ou mais</li>
+            <li data-req="maiuscula"><span class="marca" aria-hidden="true">&bull;</span> Letra maiuscula</li>
+            <li data-req="minuscula"><span class="marca" aria-hidden="true">&bull;</span> Letra minuscula</li>
+            <li data-req="numero"><span class="marca" aria-hidden="true">&bull;</span> Numero</li>
+            <li data-req="especial"><span class="marca" aria-hidden="true">&bull;</span> Caractere especial</li>
+          </ul>
         </div>
 
         <div class="form-field">
           <label for="confirmar-senha">Confirmar senha</label>
-          <input
-            type="password"
-            id="confirmar-senha"
-            name="confirmar_senha"
-            required
-            minlength="8"
-            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
-            title="Minimo de 8 caracteres, com letra maiuscula, minuscula, numero e caractere especial."
-            autocomplete="new-password">
+          <div class="input-group">
+            <input
+              type="password"
+              class="form-control"
+              id="confirmar-senha"
+              name="confirmar_senha"
+              required
+              minlength="8"
+              data-rotulo="A confirmacao de senha"
+              autocomplete="new-password">
+            <button type="button" class="mostrar-senha" data-mostrar-senha="confirmar-senha" aria-pressed="false">Mostrar</button>
+          </div>
+          <div class="invalid-feedback"></div>
         </div>
 
-        <label class="checkbox-row">
-          <input type="checkbox" name="termos" value="aceito" required checked>
-          <span>Concordo com os <a href="#">termos de uso</a> e <a href="#">politica de privacidade</a></span>
-        </label>
+        <div class="form-field">
+          <label class="checkbox-row">
+            <input type="checkbox" class="form-check-input" id="termos" name="termos" value="aceito" required data-rotulo="Os termos">
+            <span>Concordo com os <a href="#" data-soon>termos de uso</a> e <a href="#" data-soon>politica de privacidade</a></span>
+          </label>
+          <div class="invalid-feedback"></div>
+        </div>
 
-        <button type="submit" class="auth-submit">Criar conta</button>
+        <button type="submit" class="auth-submit btn">Criar conta</button>
       </form>
 
       <div class="auth-divider"><span>ou cadastre-se com</span></div>
 
       <div class="auth-social-row">
-        <button type="button" class="social-button" aria-label="Cadastrar com Google">
+        <button type="button" class="social-button" data-rede-social="Google" aria-label="Cadastrar com Google">
           <img src="assets/google_logo.png" alt="">
         </button>
-        <button type="button" class="social-button" aria-label="Cadastrar com PlayStation">
+        <button type="button" class="social-button" data-rede-social="PlayStation" aria-label="Cadastrar com PlayStation">
           <img src="assets/playstation_logo.png" alt="">
         </button>
-        <button type="button" class="social-button" aria-label="Cadastrar com Xbox">
+        <button type="button" class="social-button" data-rede-social="Xbox" aria-label="Cadastrar com Xbox">
           <img src="assets/xbox_logo.png" alt="">
         </button>
       </div>
 
-      <p class="auth-footer-link">Ja tem uma conta? <a href="#">Entrar</a></p>
+      <p class="auth-footer-link">Ja tem uma conta? <a href="#" id="abrirLogin">Entrar</a></p>
     </div>
   </main>
 
   <footer class="site-footer">
     <p>PlayLog &mdash; site feito para fins educacionais em 2026.</p>
+
+    <p class="footer-links"><a href="mapa.html">Mapa do site</a> &middot; <a href="sobre.html">Sobre</a></p>
 
     <p class="creditos">
       Arthur Danta Gonzales Felix &ndash; RM 576865<br>
@@ -167,5 +267,8 @@
     </p>
   </footer>
 
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayLog - Mapa do site</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-shell">
+
+  <header class="topbar navbar navbar-dark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menu de navegacao">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a href="index.html" class="brand">
+      <span class="brand-name">Play<span class="brand-accent">Log</span></span>
+    </a>
+
+    <form class="search-box" id="buscaTopo" role="search">
+      <svg viewBox="0 0 20 20" class="icon" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="14" x2="18" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+      <label for="campoBuscaTopo" class="visually-hidden">Pesquisar jogos</label>
+      <input type="search" id="campoBuscaTopo" placeholder="Pesquisar jogos, listas, usuarios...">
+    </form>
+
+    <div class="topbar-icons">
+      <div class="dropdown">
+        <button type="button" class="icon-button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notificacoes">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-playlog">
+          <li><h6 class="dropdown-header">Notificacoes</h6></li>
+          <li><span class="dropdown-item-text">Ana avaliou Dandara.</span></li>
+          <li><span class="dropdown-item-text">Bruno avaliou Fobia.</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="atividade.html">Ver atividade</a></li>
+        </ul>
+      </div>
+      <a href="perfil.html" class="topbar-avatar-link" aria-label="Meu perfil"><img src="assets/avatar_placeholder.png" alt="Avatar de Jogador123" class="topbar-avatar"></a>
+    </div>
+  </header>
+
+    <aside class="sidebar-left offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralTitulo">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="menuLateralTitulo">Menu</h2>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav aria-label="Menu lateral">
+        <ul>
+          <li><a href="index.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 11 L12 4 L20 11 V20 H4 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Inicio
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14.5" y1="14.5" x2="20" y2="20" stroke="currentColor" stroke-width="2"/></svg>
+            Explorar
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="jogos.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="9" width="18" height="8" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="13" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/></svg>
+            Jogos
+          </a></li>
+          <li><a href="listas.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="4" y="5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="10.5" width="16" height="3" rx="1" fill="currentColor"/><rect x="4" y="16" width="16" height="3" rx="1" fill="currentColor"/></svg>
+            Listas
+          </a></li>
+          <li><a href="atividade.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M13 3 L5 13 h6 l-1 8 8 -11 h-6 Z" fill="currentColor"/></svg>
+            Atividade
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7 L12 13 L20 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Mensagens
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4 a6 6 0 0 1 6 6 v4 l2 4 H4 l2 -4 v-4 a6 6 0 0 1 6 -6 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 20 a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Notificacoes
+          <small class="soon-badge">em breve</small></a></li>
+          <li><a href="perfil.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Perfil
+          </a></li>
+          <li><a href="cadastro.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="9" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 20 a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Cadastro
+          </a></li>
+          <li><a href="sobre.html">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11 v5 M12 8 v0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Sobre
+          </a></li>
+          <li><a href="#" class="soon" aria-disabled="true" data-soon title="Em construcao">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5.6 5.6 l2.1 2.1 M16.3 16.3 l2.1 2.1 M5.6 18.4 l2.1 -2.1 M16.3 7.7 l2.1 -2.1" stroke="currentColor" stroke-width="2"/></svg>
+            Configuracoes
+          <small class="soon-badge">em breve</small></a></li>
+        </ul>
+      </nav>
+      <div class="side-promo">
+        <img src="assets/controller.png" alt="" class="side-promo-image">
+        <h2>Descubra. Jogue. Compartilhe.</h2>
+        <p>Mais que um catalogo, uma comunidade de jogadores.</p>
+        <a href="cadastro.html" class="cta-button">Saiba mais</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="about-main" id="conteudo">
+    <div class="about-content sitemap-content">
+      <nav aria-label="Voce esta em"><ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mapa do site</li>
+      </ol></nav>
+
+      <h1>Mapa do site</h1>
+      <p class="sitemap-intro">Veja como o PlayLog esta organizado e va direto para o que procura. O menu lateral e este mapa seguem a mesma estrutura em todas as paginas.</p>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <section class="panel">
+            <h2>Navegar</h2>
+            <ul class="sitemap-list">
+            <li><a href="index.html">Inicio</a><span>Destaques da semana e atividade dos amigos.</span></li>
+            <li><a href="jogos.html">Jogos</a><span>Catalogo com busca, filtro por genero e ficha tecnica.</span></li>
+            <li><a href="listas.html">Listas</a><span>Suas listas e as listas populares.</span></li>
+            <li><a href="atividade.html">Atividade</a><span>Tempo de jogo, atividades recentes e amigos.</span></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-6">
+          <section class="panel">
+            <h2>Minha conta</h2>
+            <ul class="sitemap-list">
+            <li><a href="perfil.html">Perfil</a><span>Visao geral, jogos, reviews, listas e conquistas.</span></li>
+            <li><a href="cadastro.html">Cadastro</a><span>Crie sua conta na comunidade.</span></li>
+            <li><a href="sucesso.html">Cadastro concluido</a><span>Confirmacao apos criar a conta.</span></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-6">
+          <section class="panel">
+            <h2>Institucional</h2>
+            <ul class="sitemap-list">
+            <li><a href="sobre.html">Sobre</a><span>O que e o PlayLog e por que ele existe.</span></li>
+            <li><a href="mapa.html">Mapa do site</a><span>Esta pagina.</span></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-6">
+          <section class="panel">
+            <h2>Em breve</h2>
+            <ul class="sitemap-list">
+            <li><span class="sitemap-soon">Explorar <small>(em breve)</small></span><span>Descoberta de novos jogos.</span></li>
+            <li><span class="sitemap-soon">Mensagens <small>(em breve)</small></span><span>Conversas entre jogadores.</span></li>
+            <li><span class="sitemap-soon">Notificacoes <small>(em breve)</small></span><span>Central de avisos.</span></li>
+            <li><span class="sitemap-soon">Configuracoes <small>(em breve)</small></span><span>Preferencias da conta.</span></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>PlayLog &mdash; site feito para fins educacionais.</p>
+
+    <p class="footer-links"><a href="mapa.html">Mapa do site</a> &middot; <a href="sobre.html">Sobre</a></p>
+
+    <p class="creditos">
+      Arthur Danta Gonzales Felix &ndash; RM 576865<br>
+      Daniela Peres Marques Silveira &ndash; RM 575882<br>
+      Fabien Jean Benjamin Grolleau Lucena &ndash; RM 576715<br>
+      Pedro de Azevedo Melo Goncalves &ndash; RM 576401<br>
+      Vitor de Oliveira Rosas &ndash; RM 576045
+    </p>
+  </footer>
+
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
