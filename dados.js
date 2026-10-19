@@ -88,34 +88,6 @@ var jogos = [
     plataformas: "PC"
   },
   {
-    id: "god-of-war-4", titulo: "God of War", fichaTitulo: "God of War (2018)",
-    capa: "assets/god_of_war_4_cover.jpg", nota: 4.8,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura"],
-    desenvolvedora: "Santa Monica Studio", ano: 2018, pais: "EUA",
-    plataformas: "PS4, PC"
-  },
-  {
-    id: "god-of-war-ragnarok", titulo: "God of War Ragnarok", fichaTitulo: "God of War Ragnarok",
-    capa: "assets/god_of_war_ragnarok_cover.jpg", nota: 4.8,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura"],
-    desenvolvedora: "Santa Monica Studio", ano: 2022, pais: "EUA",
-    plataformas: "PS4, PS5, PC"
-  },
-  {
-    id: "gta-v", titulo: "Grand Theft Auto V", fichaTitulo: "Grand Theft Auto V",
-    capa: "assets/gta_v_cover.jpg", nota: 4.7,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura", "Mundo Aberto"],
-    desenvolvedora: "Rockstar North", ano: 2013, pais: "Reino Unido",
-    plataformas: "PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series"
-  },
-  {
-    id: "gta-vi", titulo: "Grand Theft Auto VI", fichaTitulo: "Grand Theft Auto VI",
-    capa: "assets/gta_VI_cover.png", nota: null,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura", "Mundo Aberto"],
-    desenvolvedora: "Rockstar Games", ano: 2026, pais: "EUA",
-    plataformas: "PS5, Xbox Series X/S"
-  },
-  {
     id: "monica", titulo: "Monica no Castelo do Dragao", fichaTitulo: "Monica no Castelo do Dragao",
     capa: "assets/monica_cover.jpeg", nota: 4.0,
     generos: ["acao", "aventura"], tags: ["Acao", "Aventura", "Retro"],
@@ -144,18 +116,25 @@ var jogos = [
     plataformas: "PC, macOS, Linux"
   },
   {
-    id: "the-last-of-us", titulo: "The Last of Us Part I", fichaTitulo: "The Last of Us Part I",
-    capa: "assets/the_last_of_us_cover.jpeg", nota: 4.8,
-    generos: ["acao", "aventura", "terror"], tags: ["Acao", "Aventura", "Terror"],
-    desenvolvedora: "Naughty Dog", ano: 2022, pais: "EUA",
-    plataformas: "PS5, PC"
+    id: "unsighted", titulo: "Unsighted", fichaTitulo: "Unsighted",
+    capa: "assets/unsighted_cover.jpeg", nota: 4.5,
+    generos: ["acao", "rpg", "aventura", "indie"], tags: ["Acao", "RPG", "Indie"],
+    desenvolvedora: "Studio Pixel Punk", ano: 2021, pais: "Brasil",
+    plataformas: "PC, PS4, Xbox One, Xbox Series, Nintendo Switch"
   },
   {
-    id: "the-last-of-us-2", titulo: "The Last of Us Part II", fichaTitulo: "The Last of Us Part II",
-    capa: "assets/the_last_of_us_2_cover.png", nota: 4.6,
-    generos: ["acao", "aventura", "terror"], tags: ["Acao", "Aventura", "Terror"],
-    desenvolvedora: "Naughty Dog", ano: 2020, pais: "EUA",
-    plataformas: "PS4, PS5, PC"
+    id: "chroma-squad", titulo: "Chroma Squad", fichaTitulo: "Chroma Squad",
+    capa: "assets/chroma_squad_cover.jpeg", nota: 4.3,
+    generos: ["estrategia", "rpg", "indie"], tags: ["Estrategia", "RPG", "Indie"],
+    desenvolvedora: "Behold Studios", ano: 2015, pais: "Brasil",
+    plataformas: "PC, PS4, Xbox One, Nintendo Switch, iOS, Android"
+  },
+  {
+    id: "relicta", titulo: "Relicta", fichaTitulo: "Relicta",
+    capa: "assets/relicta_cover.jpeg", nota: 4.0,
+    generos: ["aventura", "indie"], tags: ["Aventura", "Quebra-cabeca", "Indie"],
+    desenvolvedora: "Mighty Polygon", ano: 2020, pais: "Brasil",
+    plataformas: "PC"
   }
 ];
 
