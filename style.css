@@ -914,7 +914,7 @@ button {
   line-height: 1.6;
 }
 @media (max-width: 768px) {
-  /* ...regras que ja existem continuam aqui... */
+  /* ...regras que já existem continuam aqui... */
 
   .profile-header {
     flex-direction: column;
@@ -1104,3 +1104,300 @@ button {
     min-width: 600px;
   }
 }
+
+
+/* =========================================================
+   FASE 2 - Bootstrap 5.2.3 + JavaScript
+   Tudo abaixo complementa o CSS da Fase 1 (acima, sem alteracoes).
+   ========================================================= */
+
+/* ---------- 1. compatibilidade com o Reboot do Bootstrap ----------
+   O Bootstrap redefine margens, titulos e altura de linha.
+   Estas regras mantem o visual definido pelo grupo na Fase 1. */
+:root {
+  --bs-body-bg: var(--fundo);
+  --bs-body-color: var(--texto);
+  --bs-body-font-family: Arial, sans-serif;
+  --bs-link-color: inherit;
+  --bs-link-hover-color: inherit;
+  --cinza-claro: #E8E9EA;
+  --vermelho: #ff6b81;
+}
+body { line-height: normal; font-size: 16px; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: normal; margin: 0; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.67em; }
+p, ul, ol, dl, blockquote, figure { margin: 0; }
+ul, ol { padding: 0; }
+img, svg { vertical-align: baseline; }
+label { display: inline; }
+a:hover { color: inherit; }
+button, input, select, textarea { font-size: 13.3333px; }
+
+:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
+.visually-hidden-focusable:focus { z-index: 2000; }
+[hidden] { display: none !important; }
+
+/* ---------- 2. botoes (btn do Bootstrap com as cores do PlayLog) ---------- */
+.cta-button.btn {
+  --bs-btn-color: var(--roxo);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--roxo);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--roxo);
+  --bs-btn-hover-border-color: var(--roxo);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #a010d8;
+  --bs-btn-active-border-color: #a010d8;
+  --bs-btn-focus-shadow-rgb: 194, 40, 255;
+  font-size: 16px;
+  line-height: normal;
+}
+.cta-button.cta-solid.btn {
+  --bs-btn-color: var(--fundo);
+  --bs-btn-bg: var(--verde);
+  --bs-btn-border-color: var(--verde);
+  --bs-btn-hover-color: var(--fundo);
+  --bs-btn-hover-bg: #7dff3a;
+  --bs-btn-hover-border-color: #7dff3a;
+  --bs-btn-active-color: var(--fundo);
+  --bs-btn-active-bg: #46d600;
+  --bs-btn-active-border-color: #46d600;
+  --bs-btn-focus-shadow-rgb: 89, 255, 0;
+}
+.new-list-button.btn {
+  --bs-btn-color: #fff; --bs-btn-bg: var(--roxo); --bs-btn-border-color: var(--roxo);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #a010d8; --bs-btn-hover-border-color: #a010d8;
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: #8a0cbd; --bs-btn-active-border-color: #8a0cbd;
+  --bs-btn-focus-shadow-rgb: 194, 40, 255;
+  font-size: 16px; line-height: normal;
+}
+.auth-submit.btn {
+  --bs-btn-color: #fff; --bs-btn-bg: var(--roxo); --bs-btn-border-color: var(--roxo);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #a010d8; --bs-btn-hover-border-color: #a010d8;
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: #8a0cbd; --bs-btn-active-border-color: #8a0cbd;
+  --bs-btn-focus-shadow-rgb: 194, 40, 255;
+  line-height: normal;
+}
+.success-page a.btn {
+  --bs-btn-color: #fff; --bs-btn-bg: var(--roxo); --bs-btn-border-color: var(--roxo);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #a010d8; --bs-btn-hover-border-color: #a010d8;
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: #8a0cbd; --bs-btn-active-border-color: #8a0cbd;
+  font-size: 16px; line-height: normal;
+}
+.btn-perigo { background: #dc3545; color: #fff; border-radius: 20px; padding: 8px 16px; font-weight: 600; font-size: 16px; }
+.btn-perigo:hover { background: #b02a37; color: #fff; }
+.detalhes-btn.btn { width: 100%; margin-top: 12px; padding: 6px 12px; font-size: 14px; }
+.panel-edit-link:hover, .checkbox-row a:hover, .auth-footer-link a:hover { color: var(--roxo); text-decoration: underline; }
+.sidebar-left .active:hover { color: var(--fundo); }
+
+/* ---------- 3. topbar com navbar do Bootstrap ---------- */
+.topbar.navbar { flex-wrap: nowrap; padding: 16px 24px; position: sticky; top: 0; z-index: 1030; }
+.topbar .navbar-toggler { border-color: rgba(255, 255, 255, 0.25); padding: 6px 10px; }
+.topbar .search-box { flex: 0 1 300px; }
+.icon-button { display: inline-flex; align-items: center; padding: 4px; border-radius: 50%; }
+.icon-button:hover { background-color: var(--fundo-painel); }
+.topbar-avatar-link { display: inline-flex; }
+.dropdown-menu-playlog {
+  --bs-dropdown-bg: var(--fundo-painel);
+  --bs-dropdown-color: var(--texto);
+  --bs-dropdown-border-color: rgba(255, 255, 255, 0.1);
+  --bs-dropdown-link-color: var(--texto);
+  --bs-dropdown-link-hover-color: #fff;
+  --bs-dropdown-link-hover-bg: rgba(194, 40, 255, 0.2);
+  --bs-dropdown-link-active-bg: var(--roxo);
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-header-color: var(--texto);
+  --bs-dropdown-divider-bg: rgba(255, 255, 255, 0.1);
+  --bs-dropdown-font-size: 14px;
+  --bs-dropdown-border-radius: 8px;
+  min-width: 220px;
+}
+.dropdown-menu-playlog .dropdown-header { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.dropdown-item { background: none; border: 0; }
+
+/* ---------- 4. grade e menu lateral (offcanvas no mobile) ---------- */
+.app-body { display: block; }
+.app-body > .row { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }
+.sidebar-left { --bs-offcanvas-bg: var(--fundo-painel); --bs-offcanvas-color: var(--texto); --bs-offcanvas-width: 280px; }
+.app-body > .row > .sidebar-right { width: 100%; }
+@media (min-width: 1200px) { .app-body > .row > .sidebar-right { width: 25%; } }
+@media (min-width: 992px) { .offcanvas-lg.sidebar-left { width: auto; } }
+@media (max-width: 991.98px) { .offcanvas-lg.sidebar-left, .offcanvas.sidebar-left { width: var(--bs-offcanvas-width); max-width: 100%; } }
+.sidebar-left .offcanvas-body { display: block; padding: 0; overflow-y: visible; }
+.offcanvas.sidebar-left .offcanvas-body, .offcanvas-lg.sidebar-left .offcanvas-body { padding: 16px; }
+@media (min-width: 992px) {
+  .offcanvas-lg.sidebar-left .offcanvas-body { padding: 0; }
+  .offcanvas-lg.sidebar-left { position: sticky; top: 90px; }
+}
+.sidebar-left .offcanvas-header { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.sidebar-left nav ul { padding: 0; }
+.sidebar-left .side-promo { margin-top: 16px; }
+.soon-badge { margin-left: auto; font-size: 11px; color: var(--roxo); }
+.sidebar-left a.soon { opacity: 0.55; }
+.sidebar-left a.soon:hover { opacity: 0.8; background-color: var(--fundo-painel); }
+.sidebar-left nav a:hover:not(.active) { background-color: rgba(255, 255, 255, 0.06); }
+@media (max-width: 991.98px) { .app-body > .row { --bs-gutter-y: 16px; } .sidebar-col { display: contents; } }
+
+/* ---------- 5. breadcrumb ---------- */
+.breadcrumb { --bs-breadcrumb-divider-color: var(--texto); --bs-breadcrumb-item-active-color: var(--texto); --bs-breadcrumb-item-padding-x: 8px; font-size: 14px; margin-bottom: 16px; }
+.breadcrumb a { color: var(--roxo); font-weight: 600; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-item.active { opacity: 0.8; }
+
+/* ---------- 6. cards ---------- */
+.game-card.card, .list-card.card {
+  --bs-card-bg: transparent;
+  --bs-card-border-width: 0;
+  --bs-card-border-radius: 8px;
+  --bs-card-color: var(--texto);
+  background-color: transparent;
+  height: auto;
+}
+.list-card.card { --bs-card-bg: var(--fundo-painel); background-color: var(--fundo-painel); }
+.game-card[data-detalhes] { cursor: pointer; }
+.game-card[data-detalhes] img { transition: transform 0.15s; }
+.game-card[data-detalhes]:hover img { transform: translateY(-3px); }
+.game-card h3 { font-size: 1.17em; }
+.catalog-row { margin-bottom: 8px; }
+.catalog-count { font-size: 13px; opacity: 0.7; margin-bottom: 16px; }
+.alert-playlog { background-color: var(--fundo-painel); color: var(--texto); border: 1px solid var(--roxo); border-radius: 8px; margin-bottom: 16px; }
+.game-card .game-tags { margin-top: 8px; }
+.dropdown .list-card-menu { padding: 0 8px; }
+
+/* ---------- 7. abas do perfil (Bootstrap Tab) ---------- */
+.profile-tabs.nav { flex-wrap: wrap; }
+.profile-tab { font-size: 16px; font-family: inherit; }
+.profile-tab:hover { opacity: 1; }
+.tab-content > .tab-pane { outline: none; }
+.list-group-playlog {
+  --bs-list-group-bg: var(--fundo-painel);
+  --bs-list-group-color: var(--texto);
+  --bs-list-group-border-color: var(--fundo);
+  --bs-list-group-border-radius: 8px;
+}
+.list-group-playlog .list-group-item { display: flex; align-items: center; gap: 12px; }
+.list-group-item .recent-thumb { flex-shrink: 0; }
+
+/* ---------- 8. formularios ---------- */
+.form-field input.form-control, .form-field .form-select, .form-field textarea.form-control {
+  font-size: 13.3333px;
+  background-color: var(--texto);
+  color: var(--fundo);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 2px solid transparent;
+  width: 100%;
+}
+.form-field textarea.form-control { resize: vertical; }
+.form-field input.form-control:focus, .form-field .form-select:focus, .form-field textarea.form-control:focus {
+  background-color: #fff; color: var(--fundo); border-color: var(--roxo); box-shadow: 0 0 0 0.2rem rgba(194, 40, 255, 0.3);
+}
+.form-field input.is-invalid, .form-field .form-select.is-invalid, .form-field textarea.is-invalid { border-color: #dc3545; }
+.form-field input.is-valid, .form-field .form-select.is-valid, .form-field textarea.is-valid { border-color: var(--verde); }
+.invalid-feedback { color: var(--vermelho); font-size: 13px; margin-top: 4px; }
+.form-field .form-control.is-invalid + .invalid-feedback,
+.form-field .input-group > .is-invalid ~ .invalid-feedback,
+.form-field .form-select.is-invalid + .invalid-feedback,
+.checkbox-row input.is-invalid ~ .invalid-feedback { display: block; }
+.form-field > .checkbox-row.is-invalid-row + .invalid-feedback { display: block; }
+.form-field .form-text { color: var(--texto); font-size: 12px; margin-top: 4px; }
+.form-field legend { font-size: 14px; margin-bottom: 6px; float: none; width: auto; }
+.form-field { text-align: left; }
+.form-field .input-group { flex-wrap: nowrap; }
+.form-field .input-group > .form-control { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.form-field .input-group > .form-control.is-invalid { z-index: 1; }
+.mostrar-senha { background-color: var(--fundo); color: var(--texto); border: 2px solid transparent; border-radius: 0 12px 12px 0; padding: 0 14px; font-size: 13px; font-weight: 600; }
+.mostrar-senha:hover { color: #fff; }
+.checkbox-row .form-check-input { margin-top: 2px; flex-shrink: 0; width: 16px; height: 16px; background-color: var(--texto); border: 0; }
+.checkbox-row .form-check-input:checked { background-color: var(--roxo); }
+.progress-playlog { --bs-progress-bg: var(--fundo); --bs-progress-height: 6px; margin-top: 8px; }
+.requisitos-senha { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font-size: 12px; opacity: 0.85; }
+.requisitos-senha li.ok { color: var(--verde); }
+.requisitos-senha .marca { display: inline-block; width: 12px; text-align: center; }
+.auth-card .form-field label { text-align: left; }
+.form-modal .form-field { margin-bottom: 16px; }
+.form-modal .form-field label, .form-modal legend { display: block; font-size: 14px; margin-bottom: 6px; }
+.form-modal .form-check-label { display: inline; }
+.form-modal .form-check-input:checked { background-color: var(--roxo); border-color: var(--roxo); }
+.form-range::-webkit-slider-thumb { background-color: var(--roxo); }
+.form-range::-moz-range-thumb { background-color: var(--roxo); }
+.modal-acoes { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; }
+.form-field .form-select { appearance: auto; padding-right: 12px; background-image: none; }
+
+/* ---------- 9. modais e toasts ---------- */
+.modal {
+  --bs-modal-bg: var(--fundo-painel);
+  --bs-modal-color: var(--texto);
+  --bs-modal-border-color: rgba(255, 255, 255, 0.1);
+  --bs-modal-header-border-color: rgba(255, 255, 255, 0.08);
+  --bs-modal-footer-border-color: rgba(255, 255, 255, 0.08);
+  --bs-modal-border-radius: 12px;
+}
+.modal-title { font-size: 20px; }
+.modal-capa { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; }
+.modal .game-table { margin-top: 16px; }
+.modal .game-table th { width: 38%; color: var(--roxo); }
+.modal .game-table td, .modal .game-table th { padding: 8px 4px; }
+.toast {
+  --bs-toast-bg: var(--fundo-painel);
+  --bs-toast-color: #fff;
+  --bs-toast-border-radius: 8px;
+  --bs-toast-font-size: 14px;
+  border-left: 5px solid var(--verde) !important;
+}
+.toast-aviso { border-left-color: var(--roxo) !important; }
+.toast-erro { border-left-color: #dc3545 !important; }
+.btn-close-white { filter: invert(1) grayscale(100%) brightness(200%); }
+
+/* ---------- 10. rodape, mapa do site e extras ---------- */
+.site-footer .footer-links { margin-top: 8px; }
+.site-footer .footer-links a { color: var(--roxo); font-weight: 600; }
+.site-footer .footer-links a:hover { text-decoration: underline; }
+.sitemap-content { max-width: 900px; }
+.sitemap-intro { margin-bottom: 24px; line-height: 1.6; }
+.sitemap-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.sitemap-list li { display: flex; flex-direction: column; }
+.sitemap-list a { color: var(--roxo); font-weight: 600; }
+.sitemap-list a:hover { text-decoration: underline; }
+.sitemap-list span { font-size: 13px; opacity: 0.75; }
+.sitemap-soon { opacity: 0.6; font-weight: 600; }
+.about-content .breadcrumb { justify-content: flex-start; }
+.success-page #mensagemUsuario { color: #fff; font-weight: 600; }
+.auth-card .invalid-feedback { text-align: left; }
+.dropdown .dropdown-menu { z-index: 1050; }
+.dropdown-button, .filter-button { cursor: pointer; }
+.chart-toggle-btn:hover { color: #fff; }
+
+/* ---------- 11. responsividade extra ---------- */
+@media (max-width: 767.98px) {
+  .topbar.navbar { flex-wrap: wrap; padding: 12px 16px; gap: 12px; }
+  .topbar .brand { margin-right: auto; }
+  .topbar .search-box { order: 5; flex: 1 1 100%; width: 100%; }
+  .catalog-toolbar { flex-wrap: wrap; }
+  .page-header { flex-wrap: wrap; gap: 12px; }
+  .profile-tabs.nav { gap: 16px; }
+  .modal-acoes { flex-wrap: wrap; }
+  .my-lists-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 768px) and (max-width: 991.98px) { .my-lists-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+.soon-badge { display: none; white-space: nowrap; }
+@media (min-width: 1400px) { .soon-badge { display: inline; } }
+.offcanvas.show .soon-badge, .offcanvas-lg.show .soon-badge { display: inline; }
+
+.catalog-row .game-card.card { height: 100%; }
+.catalog-row .game-meta { margin-bottom: 12px; }
+.catalog-row .detalhes-btn.btn { margin-top: auto; }
+.app-body > .row > .feed { flex: 0 0 auto; min-width: 0; }
+.new-list-button.btn { margin-bottom: 24px; margin-top: 4px; }
+@media (max-width: 575.98px) {
+  .popular-list { flex-wrap: wrap; }
+  .popular-list-body { flex: 1 1 calc(100% - 100px); min-width: 0; }
+  .popular-list-stats { width: 100%; justify-content: flex-start; }
+}
+.form-field .form-select.is-invalid, .form-field .form-select.is-valid { background-image: none; }
