@@ -190,10 +190,10 @@ function abrirDetalhesJogo(id) {
     '<div class="row g-3"><div class="col-5"><img src="' + jogo.capa + '" class="modal-capa" alt="Capa do jogo ' + escaparHtml(jogo.titulo) + '"></div>' +
     '<div class="col-7"><h3>' + escaparHtml(jogo.titulo) + '</h3><p class="rating">' + textoNota(jogo) + "</p>" +
     '<div class="game-tags">' + jogo.tags.map(function (t) { return "<span>" + escaparHtml(t) + "</span>"; }).join("") + "</div></div></div>" +
-    '<table class="game-table mt-3"><caption class="visually-hidden">Ficha tecnica</caption><tbody>' +
+    '<table class="game-table mt-3"><caption class="visually-hidden">Ficha técnica</caption><tbody>' +
     '<tr><th scope="row">Desenvolvedora</th><td>' + escaparHtml(jogo.desenvolvedora) + "</td></tr>" +
     '<tr><th scope="row">Ano</th><td>' + (jogo.ano || "Em breve") + "</td></tr>" +
-    '<tr><th scope="row">Pais</th><td>' + escaparHtml(jogo.pais) + "</td></tr>" +
+    '<tr><th scope="row">País</th><td>' + escaparHtml(jogo.pais) + "</td></tr>" +
     '<tr><th scope="row">Plataformas</th><td>' + escaparHtml(jogo.plataformas) + "</td></tr></tbody></table>";
   document.getElementById("modalJogoAdicionar").onclick = function () {
     bootstrap.Modal.getOrCreateInstance(el).hide();
@@ -203,7 +203,7 @@ function abrirDetalhesJogo(id) {
 }
 
 function confirmarAcao(mensagem, aoConfirmar) {
-  var el = criarModal("modalConfirmar", "Confirmar acao", '<p id="modalConfirmarTexto"></p>',
+  var el = criarModal("modalConfirmar", "Confirmar ação", '<p id="modalConfirmarTexto"></p>',
     '<button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
     '<button type="button" class="btn btn-perigo" id="modalConfirmarOk">Confirmar</button>');
   document.getElementById("modalConfirmarTexto").textContent = mensagem;
@@ -220,13 +220,13 @@ function mensagemDeErro(campo) {
   var v = campo.validity;
   var rotulo = campo.dataset.rotulo || "Este campo";
   var curto = campo.minLength > 0 && campo.value.length > 0 && campo.value.length < campo.minLength;
-  if (v.valueMissing) { return campo.type === "checkbox" ? "Voce precisa aceitar para continuar." : rotulo + " e obrigatorio."; }
+  if (v.valueMissing) { return campo.type === "checkbox" ? "Você precisa aceitar para continuar." : "Preencha " + rotulo.toLowerCase() + "."; }
   if (v.customError) { return campo.validationMessage; }
-  if (v.typeMismatch) { return "Informe um valor valido para " + rotulo.toLowerCase() + "."; }
-  if (v.tooShort || curto) { return rotulo + " deve ter no minimo " + campo.minLength + " caracteres."; }
-  if (v.tooLong) { return rotulo + " deve ter no maximo " + campo.maxLength + " caracteres."; }
-  if (v.patternMismatch) { return campo.title || rotulo + " esta em um formato invalido."; }
-  return "Valor invalido.";
+  if (v.typeMismatch) { return "Informe um valor válido para " + rotulo.toLowerCase() + "."; }
+  if (v.tooShort || curto) { return rotulo + " deve ter no mínimo " + campo.minLength + " caracteres."; }
+  if (v.tooLong) { return rotulo + " deve ter no máximo " + campo.maxLength + " caracteres."; }
+  if (v.patternMismatch) { return campo.title || rotulo + " está em um formato inválido."; }
+  return "Valor inválido.";
 }
 
 function avaliarCampo(campo) {
@@ -291,7 +291,7 @@ function abrirRegistrarJogo(idJogo) {
     '<div class="invalid-feedback"></div></div>' +
     '<div class="form-field"><label for="regNota">Sua nota: <output id="regNotaValor">3</output> de 5</label>' +
     '<input type="range" class="form-range" id="regNota" min="1" max="5" step="1" value="3"></div>' +
-    '<div class="form-field"><label for="regComentario">Comentario (opcional)</label>' +
+    '<div class="form-field"><label for="regComentario">Comentário (opcional)</label>' +
     '<textarea class="form-control" id="regComentario" rows="3" maxlength="200" data-rotulo="O comentario"></textarea>' +
     '<div class="form-text"><span id="regContador">0</span>/200 caracteres</div><div class="invalid-feedback"></div></div>' +
     '<div class="modal-acoes"><button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
@@ -320,7 +320,7 @@ function abrirRegistrarJogo(idJogo) {
       document.getElementById("regNotaValor").textContent = "3";
       document.getElementById("regContador").textContent = "0";
       atualizarEstatisticas();
-      mostrarToast(novo ? "Jogo registrado e adicionado a lista!" : "Jogo registrado! Ele ja estava nessa lista.");
+      mostrarToast(novo ? "Jogo registrado e adicionado à lista!" : "Jogo registrado! Ele já estava nessa lista.");
       if (document.getElementById("listasUsuario")) { renderizarListas(); }
       if (document.getElementById("perfilReviews")) { iniciarPerfil(); }
     });
@@ -331,7 +331,7 @@ function abrirRegistrarJogo(idJogo) {
   bootstrap.Modal.getOrCreateInstance(el).show();
 }
 
-/* ---------- jogos: busca, filtro por genero, ordenacao ---------- */
+/* ---------- jogos: busca, filtro por gênero, ordenacao ---------- */
 
 function filtrarJogos(lista, genero, busca) {
   var termo = normalizar(busca || "");
@@ -360,7 +360,7 @@ function iniciarCatalogo() {
   var contador = document.getElementById("contadorCatalogo");
   var vazio = document.getElementById("vazioCatalogo");
   var rotuloOrdem = document.getElementById("rotuloOrdem");
-  var nomesOrdem = { padrao: "Filtros", titulo: "Titulo (A-Z)", nota: "Melhor nota", ano: "Mais recentes" };
+  var nomesOrdem = { padrao: "Filtros", titulo: "Título (A-Z)", nota: "Melhor nota", ano: "Mais recentes" };
 
   function renderizar() {
     var visiveis = ordenarJogos(filtrarJogos(jogos, estado.genero, estado.busca), estado.ordem);
@@ -431,7 +431,7 @@ function renderizarGrafico(metrica, dias) {
   }).join("");
   var total = serie.reduce(function (s, v) { return s + v; }, 0);
   var legenda = document.getElementById("legendaGrafico");
-  if (legenda) { legenda.textContent = "Total no periodo: " + (Math.round(total * 10) / 10) + unidade + ". Dados ilustrativos."; }
+  if (legenda) { legenda.textContent = "Total no período: " + (Math.round(total * 10) / 10) + unidade + ". Dados ilustrativos."; }
 }
 
 function iniciarAtividade() {
@@ -451,7 +451,7 @@ function iniciarAtividade() {
   document.querySelectorAll("[data-periodo]").forEach(function (item) {
     item.addEventListener("click", function () {
       estado.dias = Number(item.dataset.periodo);
-      document.getElementById("rotuloPeriodo").textContent = "Ultimos " + estado.dias + " dias";
+      document.getElementById("rotuloPeriodo").textContent = "Últimos " + estado.dias + " dias";
       document.querySelectorAll("[data-periodo]").forEach(function (x) { x.classList.toggle("active", x === item); });
       renderizarGrafico(estado.metrica, estado.dias);
     });
@@ -472,7 +472,7 @@ function renderizarListas() {
     return '<article class="list-card card">' +
       '<div class="list-card-header"><span class="list-card-icon">' + (ICONES_LISTA[l.icone] || ICONES_LISTA.personalizada) + "</span>" +
       '<div class="list-card-title"><h3>' + escaparHtml(l.nome) + "</h3><p>" + l.qtd + (l.qtd === 1 ? " jogo" : " jogos") + "</p></div>" +
-      '<div class="dropdown"><button type="button" class="list-card-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mais opcoes da lista ' + escaparHtml(l.nome) + '">&#8942;</button>' +
+      '<div class="dropdown"><button type="button" class="list-card-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mais opções da lista ' + escaparHtml(l.nome) + '">&#8942;</button>' +
       '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-playlog"><li><button type="button" class="dropdown-item" data-ver-lista="' + l.id + '">Ver jogos</button></li>' + excluir + "</ul></div></div>" +
       '<div class="list-card-covers">' + capas + "</div></article>";
   }).join("");
@@ -521,10 +521,10 @@ function iniciarListas() {
       '<div class="form-field"><label for="listaNome">Nome da lista</label>' +
       '<input type="text" class="form-control" id="listaNome" required minlength="3" maxlength="30" data-rotulo="O nome da lista">' +
       '<div class="invalid-feedback"></div></div>' +
-      '<div class="form-field"><label for="listaDescricao">Descricao (opcional)</label>' +
+      '<div class="form-field"><label for="listaDescricao">Descrição (opcional)</label>' +
       '<textarea class="form-control" id="listaDescricao" rows="2" maxlength="100" data-rotulo="A descricao"></textarea><div class="invalid-feedback"></div></div>' +
       '<fieldset class="form-field"><legend>Visibilidade</legend>' +
-      '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPublica" value="publica" checked><label class="form-check-label" for="visPublica">Publica</label></div>' +
+      '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPublica" value="publica" checked><label class="form-check-label" for="visPublica">Pública</label></div>' +
       '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPrivada" value="privada"><label class="form-check-label" for="visPrivada">Privada</label></div></fieldset>' +
       '<div class="modal-acoes"><button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
       '<button type="submit" class="cta-button cta-solid btn">Criar lista</button></div></form>');
@@ -539,7 +539,7 @@ function iniciarListas() {
         var nome = campo.value.trim();
         campo.setCustomValidity("");
         if (nome.length >= 3 && obterListas().some(function (l) { return normalizar(l.nome) === normalizar(nome); })) {
-          campo.setCustomValidity("Ja existe uma lista com esse nome.");
+          campo.setCustomValidity("Já existe uma lista com esse nome.");
         }
         if (!validarFormulario(form)) { return; }
         var todas = obterListas();
@@ -619,7 +619,7 @@ function iniciarCadastro() {
   var barra = document.getElementById("forcaBarra");
 
   function conferirConfirmacao() {
-    confirmar.setCustomValidity(confirmar.value && confirmar.value !== senha.value ? "As senhas nao conferem." : "");
+    confirmar.setCustomValidity(confirmar.value && confirmar.value !== senha.value ? "As senhas não conferem." : "");
   }
 
   function atualizarRequisitos() {
@@ -733,7 +733,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", function (e) {
     var soon = e.target.closest("[data-soon]");
-    if (soon) { e.preventDefault(); mostrarToast("Esta area ainda esta em construcao.", "aviso"); return; }
+    if (soon) { e.preventDefault(); mostrarToast("Esta área ainda está em construção.", "aviso"); return; }
     var det = e.target.closest("[data-detalhes]");
     if (det) { abrirDetalhesJogo(det.dataset.detalhes); return; }
     if (e.target.closest("[data-registrar]")) { abrirRegistrarJogo(); }

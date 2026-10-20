@@ -914,7 +914,7 @@ button {
   line-height: 1.6;
 }
 @media (max-width: 768px) {
-  /* ...regras que ja existem continuam aqui... */
+  /* ...regras que já existem continuam aqui... */
 
   .profile-header {
     flex-direction: column;
