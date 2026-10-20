@@ -1401,3 +1401,8 @@ button, input, select, textarea { font-size: 13.3333px; }
   .popular-list-stats { width: 100%; justify-content: flex-start; }
 }
 .form-field .form-select.is-invalid, .form-field .form-select.is-valid { background-image: none; }
+/* Espaço acima dos títulos das seções do Início */
+#trending-title,
+#activity-title {
+  margin-top: 24px;
+}
