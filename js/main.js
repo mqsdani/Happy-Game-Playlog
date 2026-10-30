@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", function (e) {
     var soon = e.target.closest("[data-soon]");
-    if (soon) { e.preventDefault(); mostrarToast("Esta area ainda esta em construcao.", "aviso"); return; }
+    if (soon) { e.preventDefault(); mostrarToast("Esta área ainda está em construção.", "aviso"); return; }
     var det = e.target.closest("[data-detalhes]");
     if (det) { abrirDetalhesJogo(det.dataset.detalhes); return; }
     if (e.target.closest("[data-registrar]")) { abrirRegistrarJogo(); }

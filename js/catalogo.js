@@ -35,7 +35,7 @@ function iniciarCatalogo() {
   var contador = document.getElementById("contadorCatalogo");
   var vazio = document.getElementById("vazioCatalogo");
   var rotuloOrdem = document.getElementById("rotuloOrdem");
-  var nomesOrdem = { padrao: "Filtros", titulo: "Titulo (A-Z)", nota: "Melhor nota", ano: "Mais recentes" };
+  var nomesOrdem = { padrao: "Filtros", titulo: "Título (A-Z)", nota: "Melhor nota", ano: "Mais recentes" };
 
   function renderizar() {
     var visiveis = ordenarJogos(filtrarJogos(jogos, estado.genero, estado.busca), estado.ordem);

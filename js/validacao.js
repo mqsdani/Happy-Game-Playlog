@@ -11,13 +11,13 @@ function mensagemDeErro(campo) {
   var v = campo.validity;
   var rotulo = campo.dataset.rotulo || "Este campo";
   var curto = campo.minLength > 0 && campo.value.length > 0 && campo.value.length < campo.minLength;
-  if (v.valueMissing) { return campo.type === "checkbox" ? "Voce precisa aceitar para continuar." : rotulo + " e obrigatorio."; }
+  if (v.valueMissing) { return campo.type === "checkbox" ? "Você precisa aceitar para continuar." : "Preencha " + rotulo.toLowerCase() + "."; }
   if (v.customError) { return campo.validationMessage; }
-  if (v.typeMismatch) { return "Informe um valor valido para " + rotulo.toLowerCase() + "."; }
-  if (v.tooShort || curto) { return rotulo + " deve ter no minimo " + campo.minLength + " caracteres."; }
-  if (v.tooLong) { return rotulo + " deve ter no maximo " + campo.maxLength + " caracteres."; }
-  if (v.patternMismatch) { return campo.title || rotulo + " esta em um formato invalido."; }
-  return "Valor invalido.";
+  if (v.typeMismatch) { return "Informe um valor válido para " + rotulo.toLowerCase() + "."; }
+  if (v.tooShort || curto) { return rotulo + " deve ter no mínimo " + campo.minLength + " caracteres."; }
+  if (v.tooLong) { return rotulo + " deve ter no máximo " + campo.maxLength + " caracteres."; }
+  if (v.patternMismatch) { return campo.title || rotulo + " está em um formato inválido."; }
+  return "Valor inválido.";
 }
 
 function avaliarCampo(campo) {

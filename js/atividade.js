@@ -32,7 +32,7 @@ function renderizarGrafico(metrica, dias) {
   }).join("");
   var total = serie.reduce(function (s, v) { return s + v; }, 0);
   var legenda = document.getElementById("legendaGrafico");
-  if (legenda) { legenda.textContent = "Total no periodo: " + (Math.round(total * 10) / 10) + unidade + ". Dados ilustrativos."; }
+  if (legenda) { legenda.textContent = "Total no período: " + (Math.round(total * 10) / 10) + unidade + ". Dados ilustrativos."; }
 }
 
 function iniciarAtividade() {
@@ -52,7 +52,7 @@ function iniciarAtividade() {
   document.querySelectorAll("[data-periodo]").forEach(function (item) {
     item.addEventListener("click", function () {
       estado.dias = Number(item.dataset.periodo);
-      document.getElementById("rotuloPeriodo").textContent = "Ultimos " + estado.dias + " dias";
+      document.getElementById("rotuloPeriodo").textContent = "Últimos " + estado.dias + " dias";
       document.querySelectorAll("[data-periodo]").forEach(function (x) { x.classList.toggle("active", x === item); });
       renderizarGrafico(estado.metrica, estado.dias);
     });

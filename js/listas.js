@@ -19,7 +19,7 @@ function renderizarListas() {
     return '<article class="list-card card">' +
       '<div class="list-card-header"><span class="list-card-icon">' + (ICONES_LISTA[l.icone] || ICONES_LISTA.personalizada) + "</span>" +
       '<div class="list-card-title"><h3>' + escaparHtml(l.nome) + "</h3><p>" + l.qtd + (l.qtd === 1 ? " jogo" : " jogos") + "</p></div>" +
-      '<div class="dropdown"><button type="button" class="list-card-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mais opcoes da lista ' + escaparHtml(l.nome) + '">&#8942;</button>' +
+      '<div class="dropdown"><button type="button" class="list-card-menu" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Mais opções da lista ' + escaparHtml(l.nome) + '">&#8942;</button>' +
       '<ul class="dropdown-menu dropdown-menu-end dropdown-menu-playlog"><li><button type="button" class="dropdown-item" data-ver-lista="' + l.id + '">Ver jogos</button></li>' + excluir + "</ul></div></div>" +
       '<div class="list-card-covers">' + capas + "</div></article>";
   }).join("");
@@ -68,10 +68,10 @@ function iniciarListas() {
       '<div class="form-field"><label for="listaNome">Nome da lista</label>' +
       '<input type="text" class="form-control" id="listaNome" required minlength="3" maxlength="30" data-rotulo="O nome da lista">' +
       '<div class="invalid-feedback"></div></div>' +
-      '<div class="form-field"><label for="listaDescricao">Descricao (opcional)</label>' +
+      '<div class="form-field"><label for="listaDescricao">Descrição (opcional)</label>' +
       '<textarea class="form-control" id="listaDescricao" rows="2" maxlength="100" data-rotulo="A descricao"></textarea><div class="invalid-feedback"></div></div>' +
       '<fieldset class="form-field"><legend>Visibilidade</legend>' +
-      '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPublica" value="publica" checked><label class="form-check-label" for="visPublica">Publica</label></div>' +
+      '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPublica" value="publica" checked><label class="form-check-label" for="visPublica">Pública</label></div>' +
       '<div class="form-check"><input class="form-check-input" type="radio" name="visibilidade" id="visPrivada" value="privada"><label class="form-check-label" for="visPrivada">Privada</label></div></fieldset>' +
       '<div class="modal-acoes"><button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
       '<button type="submit" class="cta-button cta-solid btn">Criar lista</button></div></form>');
@@ -86,7 +86,7 @@ function iniciarListas() {
         var nome = campo.value.trim();
         campo.setCustomValidity("");
         if (nome.length >= 3 && obterListas().some(function (l) { return normalizar(l.nome) === normalizar(nome); })) {
-          campo.setCustomValidity("Ja existe uma lista com esse nome.");
+          campo.setCustomValidity("Já existe uma lista com esse nome.");
         }
         if (!validarFormulario(form)) { return; }
         var todas = obterListas();

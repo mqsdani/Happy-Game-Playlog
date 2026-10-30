@@ -44,10 +44,10 @@ function abrirDetalhesJogo(id) {
     '<div class="row g-3"><div class="col-5"><img src="' + jogo.capa + '" class="modal-capa" alt="Capa do jogo ' + escaparHtml(jogo.titulo) + '"></div>' +
     '<div class="col-7"><h3>' + escaparHtml(jogo.titulo) + '</h3><p class="rating">' + textoNota(jogo) + "</p>" +
     '<div class="game-tags">' + jogo.tags.map(function (t) { return "<span>" + escaparHtml(t) + "</span>"; }).join("") + "</div></div></div>" +
-    '<table class="game-table mt-3"><caption class="visually-hidden">Ficha tecnica</caption><tbody>' +
+    '<table class="game-table mt-3"><caption class="visually-hidden">Ficha técnica</caption><tbody>' +
     '<tr><th scope="row">Desenvolvedora</th><td>' + escaparHtml(jogo.desenvolvedora) + "</td></tr>" +
     '<tr><th scope="row">Ano</th><td>' + (jogo.ano || "Em breve") + "</td></tr>" +
-    '<tr><th scope="row">Pais</th><td>' + escaparHtml(jogo.pais) + "</td></tr>" +
+    '<tr><th scope="row">País</th><td>' + escaparHtml(jogo.pais) + "</td></tr>" +
     '<tr><th scope="row">Plataformas</th><td>' + escaparHtml(jogo.plataformas) + "</td></tr></tbody></table>";
   document.getElementById("modalJogoAdicionar").onclick = function () {
     bootstrap.Modal.getOrCreateInstance(el).hide();
@@ -57,7 +57,7 @@ function abrirDetalhesJogo(id) {
 }
 
 function confirmarAcao(mensagem, aoConfirmar) {
-  var el = criarModal("modalConfirmar", "Confirmar acao", '<p id="modalConfirmarTexto"></p>',
+  var el = criarModal("modalConfirmar", "Confirmar ação", '<p id="modalConfirmarTexto"></p>',
     '<button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
     '<button type="button" class="btn btn-perigo" id="modalConfirmarOk">Confirmar</button>');
   document.getElementById("modalConfirmarTexto").textContent = mensagem;
@@ -83,7 +83,7 @@ function abrirRegistrarJogo(idJogo) {
     '<div class="invalid-feedback"></div></div>' +
     '<div class="form-field"><label for="regNota">Sua nota: <output id="regNotaValor">3</output> de 5</label>' +
     '<input type="range" class="form-range" id="regNota" min="1" max="5" step="1" value="3"></div>' +
-    '<div class="form-field"><label for="regComentario">Comentario (opcional)</label>' +
+    '<div class="form-field"><label for="regComentario">Comentário (opcional)</label>' +
     '<textarea class="form-control" id="regComentario" rows="3" maxlength="200" data-rotulo="O comentario"></textarea>' +
     '<div class="form-text"><span id="regContador">0</span>/200 caracteres</div><div class="invalid-feedback"></div></div>' +
     '<div class="modal-acoes"><button type="button" class="cta-button btn" data-bs-dismiss="modal">Cancelar</button>' +
@@ -112,7 +112,7 @@ function abrirRegistrarJogo(idJogo) {
       document.getElementById("regNotaValor").textContent = "3";
       document.getElementById("regContador").textContent = "0";
       atualizarEstatisticas();
-      mostrarToast(novo ? "Jogo registrado e adicionado a lista!" : "Jogo registrado! Ele ja estava nessa lista.");
+      mostrarToast(novo ? "Jogo registrado e adicionado à lista!" : "Jogo registrado! Ele já estava nessa lista.");
       if (document.getElementById("listasUsuario")) { renderizarListas(); }
       if (document.getElementById("perfilReviews")) { iniciarPerfil(); }
     });

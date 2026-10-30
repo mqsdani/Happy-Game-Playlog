@@ -33,7 +33,7 @@ function iniciarCadastro() {
   var barra = document.getElementById("forcaBarra");
 
   function conferirConfirmacao() {
-    confirmar.setCustomValidity(confirmar.value && confirmar.value !== senha.value ? "As senhas nao conferem." : "");
+    confirmar.setCustomValidity(confirmar.value && confirmar.value !== senha.value ? "As senhas não conferem." : "");
   }
 
   function atualizarRequisitos() {

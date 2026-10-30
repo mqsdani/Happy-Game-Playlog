@@ -1,17 +1,17 @@
 /* =========================================================
    PlayLog - dados do site (arrays de objetos)
-   Jogos: informacoes da Fase 1 (ficha tecnica do grupo).
+   Jogos: informacoes da Fase 1 (ficha técnica do grupo).
    Atividades, listas e series do grafico: dados ilustrativos.
    ========================================================= */
 
 var generos = [
   { id: "todos", nome: "Todos" },
-  { id: "acao", nome: "Acao" },
+  { id: "acao", nome: "Ação" },
   { id: "aventura", nome: "Aventura" },
   { id: "rpg", nome: "RPG" },
   { id: "terror", nome: "Terror" },
-  { id: "simulacao", nome: "Simulacao" },
-  { id: "estrategia", nome: "Estrategia" },
+  { id: "simulacao", nome: "Simulação" },
+  { id: "estrategia", nome: "Estratégia" },
   { id: "esporte", nome: "Esporte" },
   { id: "indie", nome: "Indie" }
 ];
@@ -20,7 +20,7 @@ var jogos = [
   {
     id: "171", titulo: "171", fichaTitulo: "171",
     capa: "assets/171_cover.jpg", nota: 4.6,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura", "Mundo Aberto"],
+    generos: ["acao", "aventura"], tags: ["Ação", "Aventura", "Mundo Aberto"],
     desenvolvedora: "Betagames Group", ano: 2026, pais: "Brasil",
     plataformas: "PC, PS4, PS5, Xbox One, Xbox Series, Nintendo Switch"
   },
@@ -34,7 +34,7 @@ var jogos = [
   {
     id: "dandara", titulo: "Dandara", fichaTitulo: "Dandara",
     capa: "assets/dandara_cover.jpeg", nota: 4.5,
-    generos: ["acao", "rpg"], tags: ["Acao", "RPG"],
+    generos: ["acao", "rpg"], tags: ["Ação", "RPG"],
     desenvolvedora: "Long Hat House", ano: 2018, pais: "Brasil",
     plataformas: "PC, PS4, Xbox One, Nintendo Switch, iOS, Android"
   },
@@ -48,14 +48,14 @@ var jogos = [
   {
     id: "9-kings", titulo: "9 Kings", fichaTitulo: "9 Kings",
     capa: "assets/9kings_cover.jpeg", nota: 4.2,
-    generos: ["estrategia", "indie"], tags: ["Estrategia", "Indie", "Roguelike"],
+    generos: ["estrategia", "indie"], tags: ["Estratégia", "Indie", "Roguelike"],
     desenvolvedora: "Sad Socket", ano: 2025, pais: "Brasil",
     plataformas: "PC (Windows, macOS)"
   },
   {
     id: "arida", titulo: "Arida", fichaTitulo: "Arida: Backland's Awakening",
     capa: "assets/arida_cover.jpeg", nota: 4.1,
-    generos: ["aventura", "indie"], tags: ["Aventura", "Indie", "Sobrevivencia"],
+    generos: ["aventura", "indie"], tags: ["Aventura", "Indie", "Sobrevivência"],
     desenvolvedora: "Aoca Game Lab", ano: 2019, pais: "Brasil",
     plataformas: "PC, Android, iOS"
   },
@@ -83,33 +83,33 @@ var jogos = [
   {
     id: "gaucho", titulo: "Gaucho and the Grassland", fichaTitulo: "Gaucho and the Grassland",
     capa: "assets/gaucho_cover.jpeg", nota: 4.0,
-    generos: ["aventura", "simulacao", "indie"], tags: ["Aventura", "Simulacao", "Indie"],
+    generos: ["aventura", "simulacao", "indie"], tags: ["Aventura", "Simulação", "Indie"],
     desenvolvedora: "Epopeia Games", ano: 2025, pais: "Brasil",
     plataformas: "PC"
   },
   {
-    id: "monica", titulo: "Monica no Castelo do Dragao", fichaTitulo: "Monica no Castelo do Dragao",
+    id: "monica", titulo: "Mônica no Castelo do Dragão", fichaTitulo: "Mônica no Castelo do Dragão",
     capa: "assets/monica_cover.jpeg", nota: 4.0,
-    generos: ["acao", "aventura"], tags: ["Acao", "Aventura", "Retro"],
+    generos: ["acao", "aventura"], tags: ["Ação", "Aventura", "Retro"],
     desenvolvedora: "Tec Toy", ano: 1991, pais: "Brasil",
     plataformas: "Master System"
   },
   {
     id: "no-place-for-bravery", titulo: "No Place for Bravery", fichaTitulo: "No Place for Bravery",
     capa: "assets/no_place_for_bravery_cover.jpeg", nota: 4.2,
-    generos: ["acao", "rpg", "indie"], tags: ["Acao", "RPG", "Indie"],
+    generos: ["acao", "rpg", "indie"], tags: ["Ação", "RPG", "Indie"],
     desenvolvedora: "Glitch Factory", ano: 2022, pais: "Brasil",
     plataformas: "PC, Nintendo Switch"
   },
   {
     id: "relic-hunters", titulo: "Relic Hunters Legend", fichaTitulo: "Relic Hunters Legend",
     capa: "assets/relic_hunters_cover.jpeg", nota: 4.3,
-    generos: ["acao", "rpg", "indie"], tags: ["Acao", "RPG", "Indie"],
+    generos: ["acao", "rpg", "indie"], tags: ["Ação", "RPG", "Indie"],
     desenvolvedora: "Rogue Snail", ano: 2025, pais: "Brasil",
     plataformas: "PC, Xbox Series"
   },
   {
-    id: "last-nightmary", titulo: "The Last NightMary", fichaTitulo: "The Last NightMary - A Lenda do Cabeca de Cuia",
+    id: "last-nightmary", titulo: "The Last NightMary", fichaTitulo: "The Last NightMary - A Lenda do Cabeça de Cuia",
     capa: "assets/the_last_night_mary_cover.jpeg", nota: 3.9,
     generos: ["terror", "indie"], tags: ["Terror", "Indie"],
     desenvolvedora: "Submersivo Game Studio", ano: 2015, pais: "Brasil",
@@ -118,14 +118,14 @@ var jogos = [
   {
     id: "unsighted", titulo: "Unsighted", fichaTitulo: "Unsighted",
     capa: "assets/unsighted_cover.jpeg", nota: 4.5,
-    generos: ["acao", "rpg", "aventura", "indie"], tags: ["Acao", "RPG", "Indie"],
+    generos: ["acao", "rpg", "aventura", "indie"], tags: ["Ação", "RPG", "Indie"],
     desenvolvedora: "Studio Pixel Punk", ano: 2021, pais: "Brasil",
     plataformas: "PC, PS4, Xbox One, Xbox Series, Nintendo Switch"
   },
   {
     id: "chroma-squad", titulo: "Chroma Squad", fichaTitulo: "Chroma Squad",
     capa: "assets/chroma_squad_cover.jpeg", nota: 4.3,
-    generos: ["estrategia", "rpg", "indie"], tags: ["Estrategia", "RPG", "Indie"],
+    generos: ["estrategia", "rpg", "indie"], tags: ["Estratégia", "RPG", "Indie"],
     desenvolvedora: "Behold Studios", ano: 2015, pais: "Brasil",
     plataformas: "PC, PS4, Xbox One, Nintendo Switch, iOS, Android"
   },
@@ -153,13 +153,13 @@ var atividadesRecentes = [
 ];
 
 var reviewsPadrao = [
-  { jogo: "fobia", nota: 5, comentario: "Historia sinistra, nao consegui parar de jogar!" }
+  { jogo: "fobia", nota: 5, comentario: "História sinistra, não consegui parar de jogar!" }
 ];
 
 var conquistas = [
   { nome: "Sobrevivente", jogo: "fobia", descricao: "Terminou um jogo de terror." },
   { nome: "Explorador", jogo: "dandara", descricao: "Jogou 10 jogos diferentes." },
-  { nome: "Critico", jogo: "171", descricao: "Escreveu 10 reviews." }
+  { nome: "Crítico", jogo: "171", descricao: "Escreveu 10 reviews." }
 ];
 
 /* ultimos 30 dias ate a data "fim" (os 14 ultimos dias sao os do grafico da Fase 1) */
