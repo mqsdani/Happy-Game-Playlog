@@ -115,6 +115,37 @@
           </div>
         </div>
       </section>
+            <section class="xp-card panel" aria-labelledby="xp-title">
+        <div class="xp-card-header">
+          <div>
+            <h2 id="xp-title">Meu progresso</h2>
+            <p class="xp-subtitle">Continue jogando para subir de nível!</p>
+          </div>
+          <div class="xp-level">
+            <span class="xp-level-label">NÍVEL</span>
+            <strong id="xpNivel">1</strong>
+          </div>
+        </div>
+
+        <div class="xp-total">
+          <strong id="xpTotal">0 XP</strong>
+          <span id="xpFaltam">0 XP para o próximo nível</span>
+        </div>
+
+        <div
+          class="xp-progress-track"
+          role="progressbar"
+          aria-label="Progresso para o próximo nível"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          id="xpBarra"
+        >
+          <div class="xp-progress-fill" id="xpBarraPreenchida"></div>
+        </div>
+
+        <p class="xp-progress-caption" id="xpPercentual">0% concluído</p>
+      </section>
 
       <div class="profile-tabs nav" role="tablist" aria-label="Seções do perfil">
         <button type="button" class="profile-tab active" id="tab-geral" data-bs-toggle="tab" data-bs-target="#painel-geral" role="tab" aria-controls="painel-geral" aria-selected="true">Visão geral</button>
@@ -299,5 +330,6 @@
   <script src="js/listas.js"></script>
   <script src="js/cadastro.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/nivel.js"></script>
 </body>
 </html>

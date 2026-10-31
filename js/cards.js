@@ -159,3 +159,4 @@ function gerarCatalogo() {
   if (area) { area.innerHTML = htmlCards; }
   if (corpoTabela) { corpoTabela.innerHTML = htmlLinhas; }
 }
+
