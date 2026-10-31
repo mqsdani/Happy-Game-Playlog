@@ -1510,3 +1510,134 @@ button, input, select, textarea { font-size: 13.3333px; }
     text-align: left;
   }
 }
+/* PLAYLOG — páginas de Termos de Uso e Política de Privacidade.
+   Classes exclusivas: não alteram as demais páginas. */
+.legal-page .legal-main {
+  min-height: calc(100vh - 70px);
+  padding: 36px 20px;
+  overflow: visible;
+}
+.legal-page .legal-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  padding: 28px 32px;
+  background: var(--fundo-painel);
+  color: var(--texto);
+  border: 1px solid rgba(194, 40, 255, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+.legal-page .legal-card h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+.legal-page .legal-document-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+.legal-page .legal-updated {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 3px 0 14px;
+}
+.legal-page .legal-intro {
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.legal-page .legal-section { margin-bottom: 15px; }
+.legal-page .legal-section h2 {
+  font-size: 16px;
+  color: var(--roxo);
+  margin-bottom: 4px;
+}
+.legal-page .legal-section p { line-height: 1.5; }
+.legal-page .legal-section a {
+  color: var(--roxo);
+  text-decoration: underline;
+}
+.legal-page .legal-back {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: var(--roxo);
+  color: #fff;
+  font-weight: 700;
+}
+.legal-page .legal-back:hover { background: #a010d8; color: #fff; }
+@media (max-width: 600px) {
+  .legal-page .legal-main { padding: 20px 12px; }
+  .legal-page .legal-card { padding: 22px 18px; }
+  .legal-page .legal-card h1 { font-size: 23px; }
+}
+body.legal-page .legal-main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  height: auto;
+  padding: 36px 20px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body.legal-page .auth-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.legal-page .legal-card {
+  display: block;
+  position: relative;
+  z-index: 1;
+  flex: 0 1 760px;
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  margin: 0 auto;
+  padding: 30px 32px;
+  background-color: #1F2225;
+  color: #BABBBB;
+  border: 1px solid rgba(194, 40, 255, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  opacity: 1;
+}
+
+body.legal-page .legal-card h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  margin: 0 0 22px;
+}
+
+body.legal-page .legal-section h2 {
+  color: #C228FF;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+body.legal-page .legal-section p,
+body.legal-page .legal-intro {
+  line-height: 1.5;
+}
+
+body.legal-page > .site-footer { display: none; }
+
+@media (max-width: 600px) {
+  body.legal-page .legal-main { padding: 20px 12px; }
+  body.legal-page .legal-card { padding: 22px 18px; }
+  body.legal-page .legal-card h1 { font-size: 23px; }
+}
+
