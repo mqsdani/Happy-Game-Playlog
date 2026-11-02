@@ -50,6 +50,16 @@ function normalizar(texto) {
   return String(texto).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
 }
 
+function limparEspacosExtras(texto) {
+  var resultado = String(texto).trim();
+
+  while (resultado.includes("  ")) {
+    resultado = resultado.replace(/  /g, " ");
+  }
+
+  return resultado;
+}
+
 function buscarJogo(id) {
   return jogos.find(function (j) { return j.id === id; });
 }
