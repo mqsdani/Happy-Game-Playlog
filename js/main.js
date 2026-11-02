@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   iniciarAtividade();
   iniciarListas();
   iniciarPerfil();
+  iniciarProgresso();
   iniciarCadastro();
   iniciarSucesso();
 
