@@ -4,7 +4,7 @@
    Depende de: dados.js, utils.js, cards.js
    ========================================================= */
 "use strict";
-
+var ultimoJogoSurpresa = null;
 /* ---------- jogos: busca, filtro por genero, ordenacao ---------- */
 
 function filtrarJogos(lista, genero, busca) {
@@ -18,16 +18,65 @@ function filtrarJogos(lista, genero, busca) {
 
 function ordenarJogos(lista, criterio) {
   var copia = lista.slice();
-  if (criterio === "nota") { copia.sort(function (a, b) { return (b.nota || 0) - (a.nota || 0); }); }
-  else if (criterio === "ano") { copia.sort(function (a, b) { return (b.ano || 0) - (a.ano || 0); }); }
-  else if (criterio === "titulo") { copia.sort(function (a, b) { return a.titulo.localeCompare(b.titulo, "pt-BR"); }); }
-  else { copia.sort(function (a, b) { return jogos.indexOf(a) - jogos.indexOf(b); }); }
+
+  switch (criterio) {
+    case "nota":
+      copia.sort(function (a, b) {
+        return (b.nota || 0) - (a.nota || 0);
+      });
+      break;
+
+    case "ano":
+      copia.sort(function (a, b) {
+        return (b.ano || 0) - (a.ano || 0);
+      });
+      break;
+
+    case "titulo":
+      copia.sort(function (a, b) {
+        return a.titulo.localeCompare(b.titulo, "pt-BR");
+      });
+      break;
+
+    default:
+      copia.sort(function (a, b) {
+        return jogos.indexOf(a) - jogos.indexOf(b);
+      });
+  }
+
   return copia;
+}
+
+function surpreenderUsuario() {
+  if (jogos.length === 0) {
+    mostrarToast("Nenhum jogo disponível no catálogo.", "aviso");
+    return;
+  }
+
+  var jogoSorteado;
+  var indiceAleatorio;
+
+  do {
+    indiceAleatorio = Math.floor(Math.random() * jogos.length);
+    jogoSorteado = jogos[indiceAleatorio];
+  } while (
+    jogos.length > 1 &&
+    jogoSorteado.id === ultimoJogoSurpresa
+  );
+
+  ultimoJogoSurpresa = jogoSorteado.id;
+
+  abrirDetalhesJogo(jogoSorteado.id);
 }
 
 function iniciarCatalogo() {
   var area = document.getElementById("catalogo");
   if (!area) { return; }
+ var botaoSurpresa = document.getElementById("btnMeSurpreenda");
+
+  if (botaoSurpresa) {
+    botaoSurpresa.addEventListener("click", surpreenderUsuario);
+  }
   gerarCatalogo();
   var estado = { genero: "todos", busca: "", ordem: "padrao" };
   var tabela = document.querySelector("#tabelaJogos tbody");
