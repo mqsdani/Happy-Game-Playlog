@@ -68,11 +68,6 @@ function renderizarMatrizAtividades() {
 
   tabela.appendChild(trTotal);
 }
-function rotuloDoDia(fim, deslocamento) {
-  var partes = fim.split("-");
-  var d = new Date(Number(partes[0]), Number(partes[1]) - 1, Number(partes[2]) - deslocamento);
-  return d.getDate() + " " + MESES[d.getMonth()];
-}
 
 function renderizarGrafico(metrica, dias) {
   var plot = document.getElementById("graficoPlot");
@@ -96,7 +91,8 @@ function renderizarGrafico(metrica, dias) {
 
 function iniciarAtividade() {
   if (!document.getElementById("graficoPlot")) { return; }
-  var estado = { metrica: "horas", dias: 14 };
+ renderizarMatrizAtividades();
+   var estado = { metrica: "horas", dias: 14 };
   renderizarGrafico(estado.metrica, estado.dias);
   document.querySelectorAll("[data-metrica]").forEach(function (b) {
     b.addEventListener("click", function () {
