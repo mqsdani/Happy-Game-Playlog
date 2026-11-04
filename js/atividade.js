@@ -15,6 +15,60 @@ function rotuloDoDia(fim, deslocamento) {
   return d.getDate() + " " + MESES[d.getMonth()];
 }
 
+/* ---------- Matriz de atividades ---------- */
+
+var diasSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"];
+
+var matrizAtividades = [
+  [3, 1, 0],
+  [1, 2, 1],
+  [4, 0, 2],
+  [2, 1, 0],
+  [5, 3, 1]
+];
+function renderizarMatrizAtividades() {
+  var tabela = document.querySelector(".tabela-atividade tbody");
+
+  if (!tabela) { return; }
+
+  tabela.innerHTML = "";
+
+  var totais = [0, 0, 0];
+
+  for (var i = 0; i < matrizAtividades.length; i++) {
+    var tr = document.createElement("tr");
+
+    var tdDia = document.createElement("td");
+    tdDia.textContent = diasSemana[i];
+    tr.appendChild(tdDia);
+
+    for (var j = 0; j < matrizAtividades[i].length; j++) {
+      var td = document.createElement("td");
+
+      td.textContent = matrizAtividades[i][j];
+      tr.appendChild(td);
+
+      totais[j] += matrizAtividades[i][j];
+    }
+
+    tabela.appendChild(tr);
+  }
+
+  var trTotal = document.createElement("tr");
+
+  var tdTitulo = document.createElement("td");
+  tdTitulo.textContent = "Total";
+  trTotal.appendChild(tdTitulo);
+
+  for (var j = 0; j < totais.length; j++) {
+    var tdTotal = document.createElement("td");
+    tdTotal.textContent = totais[j];
+    trTotal.appendChild(tdTotal);
+  }
+
+  tabela.appendChild(trTotal);
+}
+
 function renderizarGrafico(metrica, dias) {
   var plot = document.getElementById("graficoPlot");
   var eixo = document.getElementById("graficoEixo");
@@ -37,7 +91,8 @@ function renderizarGrafico(metrica, dias) {
 
 function iniciarAtividade() {
   if (!document.getElementById("graficoPlot")) { return; }
-  var estado = { metrica: "horas", dias: 14 };
+ renderizarMatrizAtividades();
+   var estado = { metrica: "horas", dias: 14 };
   renderizarGrafico(estado.metrica, estado.dias);
   document.querySelectorAll("[data-metrica]").forEach(function (b) {
     b.addEventListener("click", function () {

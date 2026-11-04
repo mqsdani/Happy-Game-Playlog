@@ -137,3 +137,18 @@ function iniciarPerfil() {
       "</strong><br><small>" + escaparHtml(a.texto) + '</small></div><span class="ms-auto recent-time">' + escaparHtml(a.quando) + "</span></li>";
   }).join("");
 }
+
+
+/* ---------- progresso do jogador (card do perfil) ---------- */
+function iniciarProgresso() {
+  if (!document.getElementById("perfilJogos")) { return; }
+
+  var progresso = progressoDoJogador(calcularEstatisticas().jogados);
+
+  document.getElementById("xpNivel").textContent = progresso.nivel;
+  document.getElementById("xpTotal").textContent = progresso.xp + " / " + progresso.proximoNivel + " XP";
+  document.getElementById("xpFaltam").textContent = "Faltam " + progresso.faltam + " XP para o nível " + (progresso.nivel + 1);
+  document.getElementById("xpPercentual").textContent = progresso.percentual + "% concluído";
+  document.getElementById("xpBarraPreenchida").style.width = progresso.percentual + "%";
+  document.getElementById("xpBarra").setAttribute("aria-valuenow", progresso.percentual);
+}
